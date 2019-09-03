@@ -1,0 +1,32 @@
+{
+    "PersonInfo": {
+    "CRUDType": "U",
+    "CRUDData": [
+      {
+        "PersonId": "12345",
+        "FirstName": "Ghanshyam",
+        "MiddleName": "Dharmdev",
+        "LastName": "Pande",
+        "NickName": "Harikrushna",
+        "BirthDate": "1781-04-03"
+      }
+    ]
+  },
+  "EmailInfo": {
+    "CRUDType": "C",
+    "CRUDData": [
+      {
+        "_id": "",
+        "EmailType": "Primary",
+        "Email": "purushottam@akshardham.com",
+        "OptOut": "false"
+      },
+      {
+        "_id": "",
+        "EmailType": "Secondary",
+        "Email": "akshar@akshardham.com",
+        "OptOut": "false"
+      }
+    ]
+  }
+}

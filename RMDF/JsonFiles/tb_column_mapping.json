@@ -1,0 +1,13 @@
+{
+  "PersonInfo": {
+    "FamilyId"  : "family_id",
+    "FirstName" : "first_name",
+    "LastName"  : "last_name",
+    "MiddleName": "middle_name",
+    "PersonId"  : "person_id"
+  },
+  "EmailInfo": {
+    "EmailType": "email_type",
+    "Email": "email"
+  }
+}
