@@ -9,6 +9,7 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json;
 using System.IO;
 using System.Text;
+using RMDF.Model;
 
 namespace RMDF.Controllers
 {
@@ -27,32 +28,52 @@ namespace RMDF.Controllers
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            return "value";
+            return "value="+id;
         }
 
         // POST api/values
         [HttpPost]
         public ActionResult<IEnumerable<string>> Post([FromBody] string value)
         {
-            JObject input= JObject.Parse(value);
+            JObject main_input_json= JObject.Parse(value);
 
-            string[] r=new string[10];
-            int i = 0;
-            foreach (var item in input)
-            {
-                r[i++]=(item.Key +"    :    "+ item.Value+",");
-            }
-
+           
             string text;
             var fileStream = new FileStream(@"C:\Users\user\Source\Repos\ERP\RMDF\JsonFiles\db_table_mapping.json", FileMode.Open, FileAccess.Read);
             using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
             {
                 text = streamReader.ReadToEnd();
-                //JObject db_table_mapping = JObject.Parse(text);
-
             }
             JObject db_table_mapping = JObject.Parse(text);
-            return new string[] { db_table_mapping.ToString() };
+
+            string text1;
+            var fileStream1 = new FileStream(@"C:\Users\user\Source\Repos\ERP\RMDF\JsonFiles\tb_column_mapping.json", FileMode.Open, FileAccess.Read);
+            using (var streamReader1 = new StreamReader(fileStream1, Encoding.UTF8))
+            {
+                text1 = streamReader1.ReadToEnd();
+            }
+            JObject db_column_mapping = JObject.Parse(text1);
+
+            
+
+            foreach (var token in main_input_json)
+            {
+                JArray inner_ary = JArray.Parse(main_input_json[token.Key]["CRUDData"].ToString());
+                JArray inner_mapped_ary = new JArray();
+                foreach (JObject inner_obj in inner_ary)
+                {
+                    JObject inner_mapped_json = new JObject();
+
+                    inner_mapped_json = MyUtility.give_mapped(inner_obj, db_column_mapping[token.Key]);
+                    inner_mapped_ary.Add(inner_mapped_json);
+                }
+
+                main_input_json[token.Key]["CRUDData"].Replace(inner_mapped_ary);
+                
+            }
+            JObject main_output_json = new JObject();
+            main_output_json = MyUtility.give_mapped(main_input_json, db_table_mapping);
+            return new string[] { main_output_json.ToString()};
         }
 
         // PUT api/values/5
@@ -66,5 +87,6 @@ namespace RMDF.Controllers
         public void Delete(int id)
         {
         }
+        
     }
 }
