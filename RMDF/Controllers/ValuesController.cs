@@ -39,7 +39,7 @@ namespace RMDF.Controllers
 
            
             string text;
-            var fileStream = new FileStream(@"C:\Users\user\Source\Repos\ERP\RMDF\JsonFiles\db_table_mapping.json", FileMode.Open, FileAccess.Read);
+            var fileStream = new FileStream(@"JsonFiles\db_table_mapping.json", FileMode.Open, FileAccess.Read);
             using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
             {
                 text = streamReader.ReadToEnd();
@@ -47,7 +47,7 @@ namespace RMDF.Controllers
             JObject db_table_mapping = JObject.Parse(text);
 
             string text1;
-            var fileStream1 = new FileStream(@"C:\Users\user\Source\Repos\ERP\RMDF\JsonFiles\tb_column_mapping.json", FileMode.Open, FileAccess.Read);
+            var fileStream1 = new FileStream(@"JsonFiles\tb_column_mapping.json", FileMode.Open, FileAccess.Read);
             using (var streamReader1 = new StreamReader(fileStream1, Encoding.UTF8))
             {
                 text1 = streamReader1.ReadToEnd();
