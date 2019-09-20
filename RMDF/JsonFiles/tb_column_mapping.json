@@ -1,10 +1,11 @@
 {
   "PersonInfo": {
-    "FamilyId"  : "family_id",
-    "FirstName" : "first_name",
-    "LastName"  : "last_name",
+    "FamilyId": "family_id",
+    "FirstName": "first_name",
+    "LastName": "last_name",
     "MiddleName": "middle_name",
-    "PersonId"  : "person_id"
+    "PersonId": "person_id",
+    "Gender": "gender"
   },
   "EmailInfo": {
     "EmailType": "email_type",

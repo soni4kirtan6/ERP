@@ -35,45 +35,14 @@ namespace RMDF.Controllers
         [HttpPost]
         public ActionResult<IEnumerable<string>> Post([FromBody] string value)
         {
-            JObject main_input_json= JObject.Parse(value);
+            //Mapping FE json to Db_understandable json
+            JObject mapped_json = MyUtility.MappingEngine(value);
+            //TO DO ---- error handling in mapping and returning result   (assigned to Sumit)
 
-           
-            string text;
-            var fileStream = new FileStream(@"JsonFiles\db_table_mapping.json", FileMode.Open, FileAccess.Read);
-            using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
-            {
-                text = streamReader.ReadToEnd();
-            }
-            JObject db_table_mapping = JObject.Parse(text);
+            //Validation Engine
+            JObject validated_json = MyUtility.ValidationEngine(mapped_json);
 
-            string text1;
-            var fileStream1 = new FileStream(@"JsonFiles\tb_column_mapping.json", FileMode.Open, FileAccess.Read);
-            using (var streamReader1 = new StreamReader(fileStream1, Encoding.UTF8))
-            {
-                text1 = streamReader1.ReadToEnd();
-            }
-            JObject db_column_mapping = JObject.Parse(text1);
-
-            
-
-            foreach (var token in main_input_json)
-            {
-                JArray inner_ary = JArray.Parse(main_input_json[token.Key]["CRUDData"].ToString());
-                JArray inner_mapped_ary = new JArray();
-                foreach (JObject inner_obj in inner_ary)
-                {
-                    JObject inner_mapped_json = new JObject();
-
-                    inner_mapped_json = MyUtility.give_mapped(inner_obj, db_column_mapping[token.Key]);
-                    inner_mapped_ary.Add(inner_mapped_json);
-                }
-
-                main_input_json[token.Key]["CRUDData"].Replace(inner_mapped_ary);
-                
-            }
-            JObject main_output_json = new JObject();
-            main_output_json = MyUtility.give_mapped(main_input_json, db_table_mapping);
-            return new string[] { main_output_json.ToString()};
+            return new string[] { "mapped_json",mapped_json.ToString(),"\nvalidated_json",validated_json.ToString()};
         }
 
         // PUT api/values/5

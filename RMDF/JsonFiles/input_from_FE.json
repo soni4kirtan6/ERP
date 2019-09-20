@@ -5,8 +5,9 @@
       {
         "PersonId": "12345",
         "FirstName": "Ghanshyam",
-        "MiddleName": "Dharmdev",
-        "LastName": "Pande"
+        "MiddleName": "knl",
+        "LastName": "Pande",
+        "Gender": "Male"
       }
     ]
   },
@@ -15,7 +16,7 @@
     "CRUDData": [
       {
         "EmailType": "Primary",
-        "Email": "purushottam@akshardham.com"
+        "Email": "purushottam@akshardham.gcet.ac.in"
       },
       {
         "EmailType": "Secondary",
