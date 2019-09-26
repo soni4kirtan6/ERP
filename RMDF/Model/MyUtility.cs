@@ -59,8 +59,8 @@ namespace RMDF.Model
                 main_input_json[token.Key]["CRUDData"].Replace(inner_mapped_ary);
 
             }
-            JObject main_output_json = new JObject();
-            main_output_json = MyUtility.give_mapped(main_input_json, db_table_mapping);
+
+            JObject main_output_json = give_mapped(main_input_json, db_table_mapping);
 
             return main_output_json;
         }
@@ -74,27 +74,27 @@ namespace RMDF.Model
             using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
             { text = streamReader.ReadToEnd(); }
             JObject val_config = JObject.Parse(text);
-            //val_config.Dump();
+            //val_config.////Dump();
             foreach (var table in j_inp)
             {
-                //val_config[table.Key].Dump();
-                //"Table : ".Dump();table.Key.Dump();
+                //val_config[table.Key].//Dump();
+                //"Table : ".//Dump();table.Key.//Dump();
                 foreach (var data in table.Value["CRUDData"])
                 {
-                    //"Data : ".Dump();data.Dump();
+                    //"Data : ".//Dump();data.//Dump();
                     foreach (var col in ((JObject)data).Properties())
                     {
-                        //"\nCol  : ".Dump();
-                        //("\nCol  : "+col.Name + " : "+col.Value).Dump();
-                        Dump(col);
+                        //"\nCol  : ".//Dump();
+                        //("\nCol  : "+col.Name + " : "+col.Value).//Dump();
+                        //Dump(col);
 
                         try
                         {
                             JArray validation_ary_4_col = JArray.Parse(val_config[table.Key][col.Name].ToString());
-                            //"check".Dump();
+                            //"check".//Dump();
                             foreach (var validation in validation_ary_4_col)
                             {
-                                //validation.Dump();
+                                //validation.//Dump();
                                 string val_name = validation["typeKey"].ToString();
                                 switch (val_name)
                                 {
@@ -103,32 +103,32 @@ namespace RMDF.Model
                                         bool cond_2 = validation["keyValue"].ToString().Equals("true");
                                         if (cond_2 || null_cond)
                                         {
-                                            Dump((val_name + " : Pass"));
+                                            //Dump((val_name + " : Pass"));
                                         }
                                         else
                                         {
-                                            Dump((val_name + " : Fail"));
+                                            //Dump((val_name + " : Fail"));
                                         }
 
                                         break;
                                     case "minLength":
                                         if (col.Value.ToString().Length >= Convert.ToInt32(validation["keyValue"].ToString()))
                                         {
-                                            Dump((val_name + " : Pass"));
+                                            //Dump((val_name + " : Pass"));
                                         }
                                         else
                                         {
-                                            Dump((val_name + " : Fail"));
+                                            //Dump((val_name + " : Fail"));
                                         }
                                         break;
                                     case "maxLength":
                                         if (col.Value.ToString().Length <= Convert.ToInt32(validation["keyValue"].ToString()))
                                         {
-                                            Dump((val_name + " : Pass"));
+                                            //Dump((val_name + " : Pass"));
                                         }
                                         else
                                         {
-                                            Dump((val_name + " : Fail"));
+                                            //Dump((val_name + " : Fail"));
                                         }
                                         break;
                                     case "RegEx":
@@ -141,35 +141,39 @@ namespace RMDF.Model
                                         JObject default_reg_ex = JObject.Parse(text1);
 
                                         Regex rgx = new Regex(default_reg_ex[validation["keyValue"].ToString()].ToString());
-                                        //rgx.Dump();
+                                        //rgx.//Dump();
                                         string input = col.Value.ToString();
                                         if (rgx.IsMatch(input))
-                                            Dump((val_name + " : Pass"));
+                                        {
+                                            //Dump((val_name + " : Pass"));
+                                        }
                                         else
-                                            Dump((val_name + " : Fail"));
+                                        {
+                                        }
+                                        //Dump((val_name + " : Fail"));
                                         break;
-
                                     case "staticList":
                                         JArray static_list = JArray.Parse(validation["keyValue"].ToString());
-                                        Dump(static_list);
+                                        //Dump(static_list);
                                         string[] items = static_list.Select(jv => (string)jv).ToArray();
                                         if (items.Contains(col.Value.ToString()))
                                         {
-                                            Dump((val_name + " : Pass"));
+                                            //Dump((val_name + " : Pass"));
                                         }
-                                        else
-                                            Dump((val_name + " : Fail"));
+                                        else {
+                                        }
+                                            //Dump((val_name + " : Fail"));
                                         break;
                                     default:
-                                        Dump("Validation not Fond");
+                                        //Dump("Validation not Fond");
                                         break;
                                 }
                             }
                         }
-                        catch (NullReferenceException e)
+                        catch (NullReferenceException)
                         {
-                            Dump(e);
-                            Dump("No Validation Required !!");
+                            //Dump(e);
+                            //Dump("No Validation Required !!");
                         }
 
                     }
