@@ -1,0 +1,138 @@
+﻿@page
+@model ConfigPortal.Pages.ConfigurationPortalModel
+@{
+    ViewData["Title"] = "ConfigurationPortal";
+
+}
+
+
+
+    <head>
+        <link href="~/css/StyleSheet.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div class="page-wrapper bg-gra-03 p-t-15 p-b-50">
+            <div class="wrapper wrapper--w790">
+                <div class="card card-5">
+                    <div class="card-heading">
+                        <h2 class="title">Configuration Portal</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="name" style="font-size:23px; color:#736AFF; font-style:oblique; font-weight:bold">1) Generate Connection String</div>
+                        <form method="POST" name="conForm">
+                            <div class="form-row">
+                                <div class="name">Enter Server Name</div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <input class="input--style-5" type="text" asp-for="ServerName" />
+                                        <label class="label--desc">Ex. localhost,192.168.1.50</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="name">Enter Database Name</div>
+                                <div class="value">
+                                    <div class="input-group m-t-10">
+                                        <input class="input--style-5" type="text" asp-for="DatabaseName"  />
+                                        <label class="label--desc">Ex. ERP, ProjectManagementSystem</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="name">Enter Username</div>
+                                <div class="value">
+                                    <div class="input-group m-t-10">
+                                        <input class="input--style-5" type="text" asp-for="UserName"  />
+                                        <label class="label--desc">username for database authentication</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="name">Enter Password</div>
+                                <div class="value">
+                                    <div class="input-group m-t-10">
+                                        <input class="input--style-5" type="text" asp-for="Password" />
+                                        <label class="label--desc">Password for database authentication</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <button class="btn btn--radius-2 btn--red m-t-30" type="submit">Save & Next</button>
+                               <label class="label--desc" style="margin-top:10px; margin-left:25px" asp-for="ConString">@Model.ConString</label>
+                            </div>
+                        </form>
+
+
+                        <form method="POST"  name="dataStructForm">
+                            <br />
+                            <br />
+                            <hr />
+                         
+                            <div class="name" style="font-size:23px; color:#736AFF; font-style:oblique; font-weight:bold; margin-top:30px; " >2) Database Structure</div>
+                            <div class="form-row">
+                                <div class="name">Enter Table Name</div>
+                                <div class="value">
+                                    <div class="row row-space">
+                                        <div class="input-group">
+                                            <input class="input--style-5" type="text" name="tablename" />
+                                            <label class="label--desc" id="tablesname"></label>
+                                        </div>
+
+                                        <button class="btn--blue btn--radius-2" style="font-size:20px;  color:azure; line-height:20px; cursor: pointer; padding: 0 50px 0 50px;" id="AddTable">Add Table</button>
+                                       
+
+                                    </div>
+                                    </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="value">
+                                    <div class="input-group">
+                                        <div class="rs-select2 js-select-simple select--no-search">
+                                            <select name="TableNameOption">
+                                                <option disabled="disabled" selected="selected">Choose Table Name</option>
+                                            </select>
+                                            <div class="select-dropdown"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="name" style="margin-top:-2px">Enter Column Name</div>
+                                <div class="value">
+                                    <div class="row row-space">
+                                        <div class="input-group">
+                                            <input class="input--style-5" type="text" name="columnname" />
+                                            <label class="label--desc" id="columnsname"></label>
+
+                                        </div>
+                                        <button class="btn--blue btn--radius-2" style="font-size:20px;  color:azure; line-height:20px; cursor: pointer; padding: 0 40px 0 40px;" id="AddColumn">Add Column</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <button class="btn btn--radius-2 btn--red m-t-30" type="submit">Save & Next</button>
+                            </div>
+                        </form>
+
+                        <form method="POST" name="mappingForm">
+                            <br />
+                            <br />
+                            <hr />
+                            <div class="name" style="font-size:23px; color:#736AFF; font-style:oblique; font-weight:bold; margin-top:30px">3) Mapping Table And Column</div>
+                            <div>
+                                <button class="btn btn--radius-2 btn--red m-t-30" type="submit">Save & Next</button>
+                            </div>
+                        </form>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
