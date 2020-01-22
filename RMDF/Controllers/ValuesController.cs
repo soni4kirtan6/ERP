@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using System.IO;
 using System.Text;
 using RMDF.Model;
+using MySql.Data.MySqlClient;
 
 namespace RMDF.Controllers
 {
@@ -28,22 +29,43 @@ namespace RMDF.Controllers
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            return "value="+id;
+            return "value=" + id;
         }
 
         // POST api/values
         [HttpPost]
         public ActionResult<IEnumerable<string>> Post([FromBody] string value)
         {
+            /*string conString = "Server=localhost;Database=project;Uid=root;psw=;";
+            MySqlConnection con = new MySqlConnection(conString);
+            MySqlCommand cmd;
+            con.Open();
+            try
+            {
+                cmd = con.CreateCommand();
+                cmd.CommandText = "INSERT INTO `person_info`(`person_id`, `first_name`, `middle_name`, `last_name`, `gender`) VALUES (101,\"Ghanshyam\",\"Dharmdev\",\"Pande\",\"Male\")";
+                cmd.ExecuteNonQuery();*/
+
             //Mapping FE json to Db_understandable json
             JObject mapped_json = MyUtility.MappingEngine(value);
-            //TO DO ---- error handling in mapping and returning result   (assigned to Sumit)
+
 
             //Validation Engine
             JObject validated_json = MyUtility.ValidationEngine(mapped_json);
 
-            return new string[] { "mapped_json",mapped_json.ToString(),"\nvalidated_json",validated_json.ToString()};
+            return new string[] { "mapped_json", mapped_json.ToString(), "\nvalidated_json", validated_json.ToString() };
         }
+        /* catch (Exception)
+         {
+             return new string[] { "SQL Error" };
+         }
+         finally
+         {
+             con.Close();
+         }
+*/
+
+    //}
 
         // PUT api/values/5
         [HttpPut("{id}")]
