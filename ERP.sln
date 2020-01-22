@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationPortal", "Conf
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfigPortal", "ConfigPortal\ConfigPortal.csproj", "{A7E9E6FC-3704-4E4A-BF3C-D9C2AE6C56D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "newmysql", "..\newmysql\newmysql\newmysql.csproj", "{3F092FA6-42FC-408E-8377-F53835E8D537}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "newmysql", "newmysql\newmysql.csproj", "{3F092FA6-42FC-408E-8377-F53835E8D537}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
