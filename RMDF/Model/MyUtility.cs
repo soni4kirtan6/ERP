@@ -11,7 +11,7 @@ namespace RMDF.Model
 {
     public class MyUtility
     {
-        public static JObject give_mapped(JObject j_inp, JToken mapping)
+        public static JObject Give_mapped(JObject j_inp, JToken mapping)
         {
             JObject j_out = new JObject();
             foreach (var prop in j_inp.Properties())//PersonInfo or PersonId
@@ -88,7 +88,7 @@ namespace RMDF.Model
                         JObject inner_mapped_json = new JObject();
 
 
-                        inner_mapped_json = MyUtility.give_mapped(inner_obj, db_column_mapping[token.Key]);
+                        inner_mapped_json = MyUtility.Give_mapped(inner_obj, db_column_mapping[token.Key]);
                         //check for error
                         if (inner_mapped_json["e_or_w"] != null)
                         {
@@ -101,7 +101,7 @@ namespace RMDF.Model
 
                 }
 
-                JObject main_output_json = give_mapped(main_input_json, db_table_mapping);
+                JObject main_output_json = Give_mapped(main_input_json, db_table_mapping);
                 //check for error not needed here
 
                 return main_output_json;
@@ -272,7 +272,7 @@ namespace RMDF.Model
                             val_out.Add("message_code", msg_code);
                             //	val_out.Dump();
                         }
-                        catch (NullReferenceException e)
+                        catch (NullReferenceException)
                         {
                             //e.Dump();
                             //"No Validation Required !!";

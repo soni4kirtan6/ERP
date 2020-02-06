@@ -37,9 +37,6 @@ namespace ConfigPortal.Pages
             string path = Environment.CurrentDirectory + "/OutputFiles/" + "ConnectionString.txt";
 
             System.IO.File.WriteAllText(path, ConnectionString);
-
-            
-
         }
 
     }
