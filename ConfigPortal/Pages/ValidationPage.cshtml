@@ -1,0 +1,57 @@
+﻿@page
+@model ConfigPortal.Pages.ValidationPageModel
+@{
+    ViewData["Title"] = "ValidationPage";
+}
+
+<div class="name" style="font-size:23px; color:#736AFF; font-weight:bold; text-align:center;">2) Add Validation to each Field</div>
+<form method="POST" name="tableMappingForm">
+    @foreach (var table in Model.dbstructure.Properties())
+    {
+        <h2>Table : @table.Name</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"><h3>Column Name</h3></th>
+                    <th scope="col">Validation Configurations</th>
+                </tr>
+            </thead>
+            @foreach (var col in table.Value)
+            {
+                <tbody>
+                    <tr>
+                        <th scope="row">@col.ToString()</th>
+                        <td>
+                            <h4>VAL 1:</h4><br>
+
+                            <label for="typekey">Type of Validation:</label>
+                            
+                            @*<label for="sel1">--Select type--</label>*@
+                            <select class="form-control" id="sel1" name="sellist1">
+                                <option>CanBeEmpty</option>
+                                <option>Maxlength</option>
+                                <option>MinLength</option>
+                                <option>RegEx</option>
+                            </select>   
+                            <br>
+                            <label for="key value">Value</label><input type="text" name="Key_value"><br>
+                            <label for="eorw">ErrorOrWarning:</label><input type="text" name="Er_war"><br>
+                            <br>
+                            <button type="button">ADD ONE MORE</button>
+                        </td>
+                    </tr>
+                </tbody>
+            }
+            <tbody>
+                <tr>
+                    <th scope="row">person_info</th>
+                    <td><input class="input--style-5" type="text" /></td>
+                </tr>
+            </tbody>
+        </table>
+    }
+    <div>
+        <button class="btn btn--radius-2 btn--red m-t-30" type="submit" asp-page="#">Save & Next</button>
+        @*<label class="label--desc" style="margin-top:10px; margin-left:25px" asp-for="ConStr">@Model.ConStr</label>*@
+    </div>
+</form>

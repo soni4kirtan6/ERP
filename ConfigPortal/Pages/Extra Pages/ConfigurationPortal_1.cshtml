@@ -8,11 +8,11 @@
 <head>
     <link href="~/css/StyleSheet.css" rel="stylesheet" type="text/css" />
 </head>
-<div class="card card-5">
+@*<div class="card card-5">
     <div class="card-heading">
         <h2 class="title">Configuration Portal</h2>
     </div>
-    <div class="card-body">
+    <div class="card-body">*@
         <div class="name" style="font-size:23px; color:#736AFF; font-style:oblique; font-weight:bold">1) Generate Connection String</div>
         <form method="POST" name="conForm">
             <div class="form-row">
@@ -54,9 +54,9 @@
             </div>
 
             <div>
-                <button class="btn btn--radius-2 btn--red m-t-30" type="submit" >Save & Next</button>
+                <button class="btn btn--radius-2 btn--red m-t-30" type="submit" asp-page="ConnectionString" >Save & Next</button>
                 <label class="label--desc" style="margin-top:10px; margin-left:25px" asp-for="ConString">@Model.ConString</label>
             </div>
         </form>
-    </div>
-</div>
+    @*</div>
+</div>*@

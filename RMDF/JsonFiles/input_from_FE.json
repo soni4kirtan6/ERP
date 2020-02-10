@@ -1,27 +1,30 @@
 {
+  "User Role": "Student",
+  "Operations": {
     "PersonInfo": {
-    "CRUDType": "U",
-    "CRUDData": [
-      {
-        "PersonId": "12345",
-        "FirstName": "Ghanshyam",
-        "MiddleName": "",
-        "LastName": "Pande",
-        "Gender": "Male"
-      }
-    ]
-  },
-  "EmailInfo": {
-    "CRUDType": "C",
-    "CRUDData": [
-      {
-        "EmailType": "Primary",
-        "Email": "purushottam@akshardham.apc.ac.in"
-      },
-      {
-        "EmailType": "Secondary",
-        "Email": "akshar@akshardham.com"
-      }
-    ]
+      "CRUDType": "U",
+      "CRUDData": [
+        {
+          "PersonId": "12345",
+          "FirstName": "Ghanshyam",
+          "MiddleName": "",
+          "LastName": "Pande",
+          "Gender": "Male"
+        }
+      ]
+    },
+    "EmailInfo": {
+      "CRUDType": "C",
+      "CRUDData": [
+        {
+          "EmailType": "Primary",
+          "Email": "purushottam@akshardham.apc.ac.in"
+        },
+        {
+          "EmailType": "Secondary",
+          "Email": "akshar@akshardham.com"
+        }
+      ]
+    }
   }
 }

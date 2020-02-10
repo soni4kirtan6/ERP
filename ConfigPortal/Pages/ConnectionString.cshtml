@@ -1,0 +1,54 @@
+﻿@page
+@model ConfigPortal.Pages.ConnectionStringModel
+@{
+    ViewData["Title"] = "ConnectionString";
+    ViewData["ConnectionString"]="";
+}
+
+
+<div class="name" style="font-size:23px; color:#736AFF; font-style:oblique; font-weight:bold">1) Generate Connection String</div>
+<form method="POST" name="conForm">
+    <div class="form-row">
+        <div class="name">Enter Server Name</div>
+        <div class="value">
+            <div class="input-group">
+                <input class="input--style-5" type="text" asp-for="ServerName" />
+                <label class="label--desc">Ex. localhost,192.168.1.50</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="name">Enter Database Name</div>
+        <div class="value">
+            <div class="input-group m-t-10">
+                <input class="input--style-5" type="text" asp-for="DatabaseName" />
+                <label class="label--desc">Ex. ERP, ProjectManagementSystem</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="name">Enter Username</div>
+        <div class="value">
+            <div class="input-group m-t-10">
+                <input class="input--style-5" type="text" asp-for="UserName" />
+                <label class="label--desc">username for database authentication</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="name">Enter Password</div>
+        <div class="value">
+            <div class="input-group m-t-10">
+                <input class="input--style-5" type="text" asp-for="Password"/>
+                <label class="label--desc">Password for database authentication</label>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <button class="btn btn--radius-2 btn--red m-t-30" type="submit" @*asp-page="MappingPage"*@>Save & Next</button>
+        <label class="label--desc" style="margin-top:10px; margin-left:25px" asp-for="ConString">@Model.ConString</label>
+    </div>
+</form>
+
