@@ -1,5 +1,5 @@
 {
-  "User Role": "Student",
+  "User Role": "UserRole1Student",
   "Operations": {
     "PersonInfo": {
       "CRUDType": "U",

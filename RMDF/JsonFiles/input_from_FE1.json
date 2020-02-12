@@ -1,0 +1,28 @@
+{
+  "User Role": "UserRole1Student",
+  "Operations": {
+    "person_info": {
+      "CRUDType": "R",
+      "CRUDData": [
+        {
+          "person_id": "123",
+          "first_name": "Raj",
+          "middle_name": "",
+          "last_name": "Thakor",
+          "gender": "Male"
+        }
+      ]
+    },
+    "email_info": {
+      "CRUDType": "D",
+      "CRUDData": [
+        {
+          "email_id": "110"
+        },
+        {
+          "email_id": "113"
+        }
+      ]
+    }
+  }
+}
