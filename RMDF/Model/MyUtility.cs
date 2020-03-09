@@ -243,8 +243,7 @@ namespace RMDF.Model
                                             msg_code.Add(validation["MsgTextNo"].ToString());
                                         }
                                         break;
-                                    d
-                                            efault:
+                                    default:
                                         //"Validation not Found".Dump();
                                         break;
                                 }

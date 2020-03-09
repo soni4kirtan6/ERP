@@ -43,13 +43,13 @@ namespace ConfigPortal.Pages
             Password = Request.Form[nameof(Password)];
             ConString = Request.Form[nameof(ConString)];
 
-            string ConnectionString = "Server=" + ServerName + ";Database=" + DatabaseName + ";Uid=" + UserName + ";psw=" + Password + ";";
-            ConString = "Connection String :: " + ConnectionString;
+            //string ConnectionString = "Server=" + ServerName + ";Database=" + DatabaseName + ";Uid=" + UserName + ";psw=" + Password + ";";
+            //ConString = "Connection String :: " + ConnectionString;
 
             //generate json for db struct and save to file
             try
             {
-                string constr = "server=localhost;port=3306;uid=root;pwd=;database=project;charset=utf8;SslMode=none;";
+                string constr = "server=" + ServerName + ";port=3306;uid=" + UserName + ";pwd=" + Password + ";database=" + DatabaseName + ";charset=utf8;SslMode=none;";
                 MySqlConnection con = new MySqlConnection(constr);
 
                 con.Open();

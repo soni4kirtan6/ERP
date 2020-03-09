@@ -16,7 +16,7 @@
 <body>
   @*  <p>Con String ::: </p>*@
     @*<p>@Model.dbstruct</p>*@
-    <div class="name" style="font-size:35px; color:#736AFF;; font-weight:bold; text-align:center">2) Table and Column Mapping</div><br />
+    <div class="name" style="font-size:35px; color:#736AFF; font-weight:bold; text-align:center">2) Table and Column Mapping</div><br />
     <form method="POST" name="tableMappingForm">
         <table class="table">
             <thead>
@@ -36,7 +36,7 @@
             }
         </table>
         <div>
-            <button class="btn btn--radius-2 btn--red m-t-30" type="submit" asp-page="CoumnMappingPage">Save & Next</button>
+            <button class="btn btn--radius-2 btn--red m-t-30" type="submit">Save & Next</button>
             <label class="label--desc" style="margin-top:10px; margin-left:25px" asp-for="ConStr">@Model.ConStr</label>
         </div>
     </form>

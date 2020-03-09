@@ -8,6 +8,7 @@
 <form method="POST" name="tableMappingForm">
     @foreach (var table in Model.dbstructure.Properties())
     {
+        string tableName = table.Name.ToString();
         <h2>Table : @table.Name</h2>
         <table class="table">
             <thead>
@@ -18,26 +19,36 @@
             </thead>
             @foreach (var col in table.Value)
             {
+                int i = 0;
+
+                string colName=col.ToString();
                 <tbody>
                     <tr>
-                        <th scope="row">@col.ToString()</th>
+                        <th scope="row">@colName</th>
                         <td>
-                            <h4>VAL 1:</h4><br>
+                            <div>
+                                @tableName-@colName-@i
+                                <div class="validation" id="@tableName-@colName-@i">
+                                    <h4 class="val-no" id="val_no-@tableName-@colName-0">Validation @(i + 1):</h4><br />
 
-                            <label for="typekey">Type of Validation:</label>
-                            
-                            @*<label for="sel1">--Select type--</label>*@
-                            <select class="form-control" id="sel1" name="sellist1">
-                                <option>CanBeEmpty</option>
-                                <option>Maxlength</option>
-                                <option>MinLength</option>
-                                <option>RegEx</option>
-                            </select>   
-                            <br>
-                            <label for="key value">Value</label><input type="text" name="Key_value"><br>
-                            <label for="eorw">ErrorOrWarning:</label><input type="text" name="Er_war"><br>
-                            <br>
-                            <button type="button">ADD ONE MORE</button>
+                                    <label>Type of Validation:</label>
+
+                                    <select class="form-control type-sel" id="type_sel-@tableName-@colName-0">
+                                        <option>CanBeEmpty</option>
+                                        <option>Maxlength</option>
+                                        <option>MinLength</option>
+                                        <option>RegEx</option>
+                                        <option>Static List</option>
+                                    </select>
+                                    <br />
+                                    <label>Value :</label>
+                                    <input class="input--style-5 valu-" placeholder="Enter Value" type="text" id="value-@tableName-@colName-0"><br />
+                                    <label>ErrorOrWarning :</label>
+                                    <input class="input--style-5 e-w" placeholder="e/w" type="text" id="E_W-@tableName-@colName-0"><br />
+                                    <br />
+                                </div>
+                            </div>
+                            <button class="btn btn-info" type="button" onclick="duplicate('@tableName-@colName')">ADD ONE MORE</button>
                         </td>
                     </tr>
                 </tbody>
@@ -55,3 +66,33 @@
         @*<label class="label--desc" style="margin-top:10px; margin-left:25px" asp-for="ConStr">@Model.ConStr</label>*@
     </div>
 </form>
+
+<script>
+    //var i = 0;
+    var colCount = {};
+    function duplicate(col) {
+        if (colCount[col] == undefined) {
+            colCount[col] = 0;
+        }
+            //alert(colCount[col]);
+        var original = document.getElementById(col + "-" + colCount[col]);
+        var clone = original.cloneNode(true); // "deep" clone
+
+        var valNo = clone.getElementsByClassName("val-no")[0];
+        var typeSel = clone.getElementsByClassName("type-sel")[0];
+        var value = clone.getElementsByClassName("valu-")[0];
+        var e_w = clone.getElementsByClassName("e-w")[0];
+
+        colCount[col] = colCount[col] + 1;
+
+        clone.id = col + "-" +colCount[col]; // there can only be one element with an ID
+        valNo.innerText = "Validation " + (colCount[col] + 1)+":";
+        typeSel.id = "type_sel-" + col + "-" + colCount[col];
+        value.id = "value-" + col + "-" +colCount[col];
+        e_w.id = "E_W-" + col + "-" + colCount[col];
+
+        clone.onclick = duplicate; // event handlers are not cloned
+        original.parentNode.appendChild(clone);
+        
+    }
+</script>

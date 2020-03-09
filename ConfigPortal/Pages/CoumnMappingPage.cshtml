@@ -5,7 +5,6 @@
 }
 
 <div class="name" style="font-size:35px; color:#736AFF; font-weight:bold; text-align:center;" >2) Table and Column Mapping</div><br /><br />
-@*<p>@Model.dbstructure.ToString()</p>*@
 <form method="POST" name="tableMappingForm">
     @foreach(var table in Model.dbstructure.Properties())
     {
@@ -22,20 +21,14 @@
             <tbody>
                 <tr>
                     <th scope="row">@col.ToString()</th>
-                    <td><input class="input--style-5" type="text" /></td>
+                    <td><input class="input--style-5" type="text" name="@table.Name-@col"/></td>
                 </tr>
             </tbody>
         }
-        <tbody>
-            <tr>
-                <th scope="row">person_info</th>
-                <td><input class="input--style-5" type="text" /></td>
-            </tr>
-        </tbody>
     </table>
     }
     <div>
-        <button class="btn btn--radius-2 btn--red m-t-30" type="submit" asp-page="ValidationPage">Save & Next</button>
+        <button class="btn btn--radius-2 btn--red m-t-30" type="submit" >Save & Next</button>
         @*<label class="label--desc" style="margin-top:10px; margin-left:25px" asp-for="ConStr">@Model.ConStr</label>*@
     </div>
 </form>
