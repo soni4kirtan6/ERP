@@ -19,7 +19,7 @@
             </thead>
             @foreach (var col in table.Value)
             {
-                int i = 0;
+                //int i = 0;
 
                 string colName=col.ToString();
                 <tbody>
@@ -27,13 +27,13 @@
                         <th scope="row">@colName</th>
                         <td>
                             <div>
-                                @tableName-@colName-@i
-                                <div class="validation" id="@tableName-@colName-@i">
-                                    <h4 class="val-no" id="val_no-@tableName-@colName-0">Validation @(i + 1):</h4><br />
+                                
+                                <div class="validation" id="@tableName-@colName-0">
+                                    <h4 class="val-no" id="val_no-@tableName-@colName-0" name="val_no-@tableName-@colName-0">Validation 1:</h4><br />
 
                                     <label>Type of Validation:</label>
 
-                                    <select class="form-control type-sel" id="type_sel-@tableName-@colName-0">
+                                    <select class="form-control type-sel" id="type_sel-@tableName-@colName-0" name="type_sel-@tableName-@colName-0" >
                                         <option>CanBeEmpty</option>
                                         <option>Maxlength</option>
                                         <option>MinLength</option>
@@ -42,23 +42,18 @@
                                     </select>
                                     <br />
                                     <label>Value :</label>
-                                    <input class="input--style-5 valu-" placeholder="Enter Value" type="text" id="value-@tableName-@colName-0"><br />
+                                    <input class="input--style-5 valu-" placeholder="Enter Value" type="text" id="value-@tableName-@colName-0" name="value-@tableName-@colName-0"><br />
                                     <label>ErrorOrWarning :</label>
-                                    <input class="input--style-5 e-w" placeholder="e/w" type="text" id="E_W-@tableName-@colName-0"><br />
+                                    <input class="input--style-5 e-w" placeholder="e/w" type="text" id="E_W-@tableName-@colName-0" name="E_W-@tableName-@colName-0"><br />
                                     <br />
                                 </div>
                             </div>
+                            <input type="hidden" class="hidden-count" id="count-@tableName-@colName" name="count-@tableName-@colName">
                             <button class="btn btn-info" type="button" onclick="duplicate('@tableName-@colName')">ADD ONE MORE</button>
                         </td>
                     </tr>
                 </tbody>
             }
-            <tbody>
-                <tr>
-                    <th scope="row">person_info</th>
-                    <td><input class="input--style-5" type="text" /></td>
-                </tr>
-            </tbody>
         </table>
     }
     <div>
@@ -70,6 +65,27 @@
 <script>
     //var i = 0;
     var colCount = {};
+    window.onload=function () {
+        var hiddenCounts = document.getElementsByClassName("hidden-count");
+        
+        for (var i = 0; i < hiddenCounts.length; i++) {
+            hiddenCounts[i].value = 1;
+            //alert(hiddenCounts[i].value);
+        }
+        var ew = document.getElementsByClassName("e-w");
+        //alert(ew.length);
+        for (var i = 0; i < ew.length; i++) {
+            ew[i].value = "e";
+            //alert(ew[i].value);
+        }
+
+        var val = document.getElementsByClassName("valu-");
+        //alert(ew.length);
+        for (var i = 0; i < val.length; i++) {
+            val[i].value = "false";
+            //alert(ew[i].value);
+        }
+    };
     function duplicate(col) {
         if (colCount[col] == undefined) {
             colCount[col] = 0;
@@ -91,8 +107,16 @@
         value.id = "value-" + col + "-" +colCount[col];
         e_w.id = "E_W-" + col + "-" + colCount[col];
 
+        typeSel.setAttribute("name",(typeSel.id));
+        value.setAttribute("name",(value.id));
+        e_w.setAttribute("name",(e_w.id));
+
+        //alert(value);
         clone.onclick = duplicate; // event handlers are not cloned
         original.parentNode.appendChild(clone);
-        
+        var hiddenCount = document.getElementById("count-" + col);
+        //alert(hiddenCount);
+        hiddenCount.value = colCount[col]+1;
+        //alert(hiddenCount.value + ":" + colCount[col]);
     }
 </script>
