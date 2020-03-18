@@ -5,19 +5,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      },
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1002
-      },
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1003
+        "MsgTextNo": "1001"
       }
     ],
     "Email_Id": [
@@ -25,7 +13,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1002"
       }
     ],
     "Message": [
@@ -33,13 +21,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      },
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1002
+        "MsgTextNo": "1003"
       }
     ]
   },
@@ -49,7 +31,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1004"
       }
     ],
     "Course_Name": [
@@ -57,7 +39,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1005"
       }
     ],
     "Beanch_Name": [
@@ -65,7 +47,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1006"
       }
     ],
     "Subject_Name": [
@@ -73,19 +55,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      },
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1002
-      },
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1003
+        "MsgTextNo": "1007"
       }
     ],
     "Topic_Name": [
@@ -93,7 +63,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1008"
       }
     ],
     "Password": [
@@ -101,7 +71,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1009"
       }
     ]
   },
@@ -111,13 +81,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      },
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1002
+        "MsgTextNo": "1010"
       }
     ],
     "Course_Name": [
@@ -125,7 +89,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1011"
       }
     ],
     "Branch_Name": [
@@ -133,7 +97,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1012"
       }
     ],
     "Subject_Name": [
@@ -141,13 +105,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      },
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1002
+        "MsgTextNo": "1013"
       }
     ],
     "Topic_Name": [
@@ -155,7 +113,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1014"
       }
     ],
     "Password": [
@@ -163,7 +121,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1015"
       }
     ]
   },
@@ -173,7 +131,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1016"
       }
     ],
     "First_Name": [
@@ -181,7 +139,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1017"
       }
     ],
     "Last_Name": [
@@ -189,7 +147,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1018"
       }
     ],
     "Course_Name": [
@@ -197,7 +155,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1019"
       }
     ],
     "Branch_Name": [
@@ -205,7 +163,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1020"
       }
     ],
     "Current_Year": [
@@ -213,7 +171,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1021"
       }
     ],
     "Email_Id": [
@@ -221,7 +179,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1022"
       }
     ],
     "Mobile_No": [
@@ -229,7 +187,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1023"
       }
     ],
     "Country": [
@@ -237,7 +195,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1024"
       }
     ],
     "Password": [
@@ -245,7 +203,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1025"
       }
     ],
     "Confirm_Password": [
@@ -253,7 +211,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1026"
       }
     ]
   },
@@ -263,7 +221,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1027"
       }
     ],
     "Email_Id": [
@@ -271,7 +229,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1028"
       }
     ],
     "Password": [
@@ -279,7 +237,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1029"
       }
     ]
   },
@@ -289,7 +247,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1030"
       }
     ],
     "Course_Name": [
@@ -297,7 +255,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1031"
       }
     ],
     "Branch_Name": [
@@ -305,7 +263,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1032"
       }
     ],
     "Password": [
@@ -313,7 +271,7 @@
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1033"
       }
     ]
   }
