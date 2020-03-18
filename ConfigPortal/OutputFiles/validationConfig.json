@@ -1,37 +1,277 @@
 {
-  "email_info": {
-    "person_name": [
+  "contact_info": {
+    "Enrollment_No": [
       {
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1001"
       }
     ],
-    "email_id": [
+    "Email_Id": [
       {
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1002"
+      }
+    ],
+    "Message": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1003"
       }
     ]
   },
-  "person_info": {
-    "person_name": [
+  "course_data": {
+    "Enrollment_No": [
       {
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1004"
       }
     ],
-    "person_id": [
+    "Course_Name": [
       {
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
         "errorOrWarning": "e",
-        "MsgTextNo": 1001
+        "MsgTextNo": "1005"
+      }
+    ],
+    "Beanch_Name": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1006"
+      }
+    ],
+    "Subject_Name": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1007"
+      }
+    ],
+    "Topic_Name": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1008"
+      }
+    ],
+    "Password": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1009"
+      }
+    ]
+  },
+  "library_info": {
+    "Enrollment_No": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1010"
+      }
+    ],
+    "Course_Name": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1011"
+      }
+    ],
+    "Branch_Name": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1012"
+      }
+    ],
+    "Subject_Name": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1013"
+      }
+    ],
+    "Topic_Name": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1014"
+      }
+    ],
+    "Password": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1015"
+      }
+    ]
+  },
+  "student_info": {
+    "Student_id": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1016"
+      }
+    ],
+    "First_Name": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1017"
+      }
+    ],
+    "Last_Name": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1018"
+      }
+    ],
+    "Course_Name": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1019"
+      }
+    ],
+    "Branch_Name": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1020"
+      }
+    ],
+    "Current_Year": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1021"
+      }
+    ],
+    "Email_Id": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1022"
+      }
+    ],
+    "Mobile_No": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1023"
+      }
+    ],
+    "Country": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1024"
+      }
+    ],
+    "Password": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1025"
+      }
+    ],
+    "Confirm_Password": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1026"
+      }
+    ]
+  },
+  "student_login_info": {
+    "Enrollment_No": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1027"
+      }
+    ],
+    "Email_Id": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1028"
+      }
+    ],
+    "Password": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1029"
+      }
+    ]
+  },
+  "student_workshop": {
+    "Enrollment_No": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1030"
+      }
+    ],
+    "Course_Name": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1031"
+      }
+    ],
+    "Branch_Name": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1032"
+      }
+    ],
+    "Password": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1033"
       }
     ]
   }

@@ -28,7 +28,7 @@ namespace ConfigPortal.Pages
             {
                 return Page();
             }
-
+            int code = 1001;
             JObject val_config = new JObject();
             foreach (var table in dbstructure.Properties())
             {
@@ -40,6 +40,7 @@ namespace ConfigPortal.Pages
                     string c_Column = col.ToString();
                     string count = Request.Form["count-"+c_Table + "-" + c_Column];
                     //int length= (int)Request.Form[];
+                    
                     for (int i = 0; i < Convert.ToInt32(count); i++)
                     {
                         JObject val_obj = new JObject();
@@ -51,8 +52,8 @@ namespace ConfigPortal.Pages
                         val_obj.Add("typeKey",type_sel);
                         val_obj.Add("keyValue", value);
                         val_obj.Add("errorOrWarning", E_W);
-                        val_obj.Add("MsgTextNo", (1001+i));//doubt individual val or val type has unoque no
-
+                        val_obj.Add("MsgTextNo", (code++).ToString());//doubt individual val or val type has unique no
+                        //code++;
                         val_arr.Add(val_obj);
                     }
 
@@ -68,7 +69,7 @@ namespace ConfigPortal.Pages
 
 
             System.IO.File.WriteAllText(path, val_config.ToString());
-            return RedirectToPage("./Index");
+            return RedirectToPage("./AuthenticationPage");
         }
     }
 }
