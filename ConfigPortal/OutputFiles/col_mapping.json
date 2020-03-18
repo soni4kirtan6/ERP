@@ -1,47 +1,10 @@
 {
-  "contact_info": {
-    "Enrollment_No": "p",
-    "Email_Id": "o",
-    "Message": "i"
+  "email_info": {
+    "person_name": "",
+    "email_id": ""
   },
-  "course_data": {
-    "Enrollment_No": "u",
-    "Course_Name": "y",
-    "Beanch_Name": "t",
-    "Subject_Name": "r",
-    "Topic_Name": "e",
-    "Password": "w"
-  },
-  "library_info": {
-    "Enrollment_No": "q",
-    "Course_Name": "l",
-    "Branch_Name": "k",
-    "Subject_Name": "j",
-    "Topic_Name": "h",
-    "Password": "g"
-  },
-  "student_info": {
-    "Student_id": "f",
-    "First_Name": "d",
-    "Last_Name": "s",
-    "Course_Name": "a",
-    "Branch_Name": "z",
-    "Current_Year": "x",
-    "Email_Id": "c",
-    "Mobile_No": "v",
-    "Country": "vb",
-    "Password": "b",
-    "Confirm_Password": "n"
-  },
-  "student_login_info": {
-    "Enrollment_No": "m",
-    "Email_Id": "1",
-    "Password": "2"
-  },
-  "student_workshop": {
-    "Enrollment_No": "3",
-    "Course_Name": "4",
-    "Branch_Name": "5",
-    "Password": "6"
+  "person_info": {
+    "person_name": "",
+    "person_id": ""
   }
 }

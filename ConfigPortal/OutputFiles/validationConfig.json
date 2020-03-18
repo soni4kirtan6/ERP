@@ -1,26 +1,6 @@
 {
-  "contact_info": {
-    "Enrollment_No": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      },
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1002
-      },
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1003
-      }
-    ],
-    "Email_Id": [
+  "email_info": {
+    "person_name": [
       {
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
@@ -28,75 +8,7 @@
         "MsgTextNo": 1001
       }
     ],
-    "Message": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      },
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1002
-      }
-    ]
-  },
-  "course_data": {
-    "Enrollment_No": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      }
-    ],
-    "Course_Name": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      }
-    ],
-    "Beanch_Name": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      }
-    ],
-    "Subject_Name": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      },
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1002
-      },
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1003
-      }
-    ],
-    "Topic_Name": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      }
-    ],
-    "Password": [
+    "email_id": [
       {
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
@@ -105,22 +17,8 @@
       }
     ]
   },
-  "library_info": {
-    "Enrollment_No": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      },
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1002
-      }
-    ],
-    "Course_Name": [
+  "person_info": {
+    "person_name": [
       {
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
@@ -128,187 +26,7 @@
         "MsgTextNo": 1001
       }
     ],
-    "Branch_Name": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      }
-    ],
-    "Subject_Name": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      },
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1002
-      }
-    ],
-    "Topic_Name": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      }
-    ],
-    "Password": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      }
-    ]
-  },
-  "student_info": {
-    "Student_id": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      }
-    ],
-    "First_Name": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      }
-    ],
-    "Last_Name": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      }
-    ],
-    "Course_Name": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      }
-    ],
-    "Branch_Name": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      }
-    ],
-    "Current_Year": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      }
-    ],
-    "Email_Id": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      }
-    ],
-    "Mobile_No": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      }
-    ],
-    "Country": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      }
-    ],
-    "Password": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      }
-    ],
-    "Confirm_Password": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      }
-    ]
-  },
-  "student_login_info": {
-    "Enrollment_No": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      }
-    ],
-    "Email_Id": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      }
-    ],
-    "Password": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      }
-    ]
-  },
-  "student_workshop": {
-    "Enrollment_No": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      }
-    ],
-    "Course_Name": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      }
-    ],
-    "Branch_Name": [
-      {
-        "typeKey": "CanBeEmpty",
-        "keyValue": "false",
-        "errorOrWarning": "e",
-        "MsgTextNo": 1001
-      }
-    ],
-    "Password": [
+    "person_id": [
       {
         "typeKey": "CanBeEmpty",
         "keyValue": "false",
