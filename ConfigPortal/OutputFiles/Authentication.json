@@ -1,0 +1,14 @@
+{
+  "student": {
+    "email_info": {
+      "CRUD": "C---",
+      "!WriteColumns": []
+    },
+    "person_info": {
+      "CRUD": "-R--",
+      "!ReadColumns": [
+        "person_name"
+      ]
+    }
+  }
+}

@@ -4,25 +4,25 @@
     ViewData["Title"] = "AuthenticationPage";
 }
 
-    <style>
-        legend.scheduler-border {
-    width:inherit; /* Or auto */
-    padding:0 10px; /* To give a bit of padding on the left and right */
-    border-bottom:none;
-}
-    </style>
+<style>
+    legend.scheduler-border {
+        width: inherit; /* Or auto */
+        padding: 0 10px; /* To give a bit of padding on the left and right */
+        border-bottom: none;
+    }
+</style>
 
 <h1>AuthenticationPage</h1>
-<form action="/" method="post">
+<form method="post">
     <div id="rolemaster0" class="border border-dark" style="padding:10px;margin:10px;">
         <h4>Role id</h4>
-        <input id="role_id" class="input-sm input--style-5 col-sm-3" type="text" />
+        <input id="role_id" name="role_id" class="input-sm input--style-5 col-sm-3" type="text" />
         <br>
         <h4>Role Name</h4>
-        <input id="role_name" class="input--style-5 col-sm-3" type="text" />
+        <input id="role_name" name="role_name" class="input--style-5 col-sm-3" type="text" />
         <br>
         <br>
-  
+
 
         @foreach (var table in Model.dbstructure.Properties())
         {
@@ -36,10 +36,10 @@
 
                 <h4>Column Operation</h4>
                 <div class="border border-dark ">
-                    <label class="col-md-1"><input type="checkbox" id="c-@TableName" onclick="enable_toggle('@TableName.ToString()')" name="create" value="C">Create</label>
-                    <label class="col-md-1"><input type="checkbox" id="r-@TableName" onclick="enable_toggle('@TableName.ToString()')" name="read" value="R">Read</label>
-                    <label class="col-md-1"><input type="checkbox" id="u-@TableName" onclick="enable_toggle('@TableName.ToString()')" name="update" value="U">Update</label>
-                    <label class="col-md-1"><input type="checkbox" id="d-@TableName" onclick="enable_toggle('@TableName.ToString()')" name="delete" value="D">Delete</label>
+                    <label class="col-md-1"><input type="checkbox" id="c-@TableName" onclick="enable_toggle('@TableName.ToString()')" name="c-@TableName" value="c">Create</label>
+                    <label class="col-md-1"><input type="checkbox" id="r-@TableName" onclick="enable_toggle('@TableName.ToString()')" name="r-@TableName" value="r">Read</label>
+                    <label class="col-md-1"><input type="checkbox" id="u-@TableName" onclick="enable_toggle('@TableName.ToString()')" name="u-@TableName" value="u">Update</label>
+                    <label class="col-md-1"><input type="checkbox" id="d-@TableName" onclick="enable_toggle('@TableName.ToString()')" name="d-@TableName" value="d">Delete</label>
                 </div>
 
                 <div id="read-@TableName" style="display:none;" class="border border-dark col-md-3">
@@ -76,12 +76,12 @@
             </div>
         }
     </div>
-    <button class="btn btn-info" type="submit">SAVE & ADD new Role</button>
-    
+    <button class="btn btn-info" id="saveNnext" type="submit">SAVE & ADD new Role</button>
 
 
 
-    <button class="btn btn-success" type="button">SAVE & SUBMIT</button>
+
+    <button class="btn btn-success" id="saveNsubmit" type="submit">SAVE & SUBMIT</button>
 </form>
 
 
@@ -92,7 +92,7 @@
         var p = document.getElementById(parent);
 
         var checkboxes = p.getElementsByTagName("input");
-        alert(checkboxes);
+        //alert(checkboxes);
         for (var i = 0; i < checkboxes.length; i++) {
             if (toggle) {
                 checkboxes[i].checked = true;
