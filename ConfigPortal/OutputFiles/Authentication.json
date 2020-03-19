@@ -1,0 +1,109 @@
+{
+  "teacher": {
+    "contact_info": {
+      "CRUD": "C---",
+      "!WriteColumns": [
+        "Email_Id",
+        "Message"
+      ]
+    },
+    "course_data": {
+      "CRUD": "-RU-",
+      "!ReadColumns": [
+        "Course_Name",
+        "Beanch_Name",
+        "Topic_Name",
+        "Password"
+      ],
+      "!WriteColumns": [
+        "Topic_Name",
+        "Password"
+      ]
+    },
+    "library_info": {
+      "CRUD": "C---",
+      "!WriteColumns": []
+    },
+    "student_login_info": {
+      "CRUD": "-R--",
+      "!ReadColumns": [
+        "Password"
+      ]
+    },
+    "student_workshop": {
+      "CRUD": "CR--",
+      "!ReadColumns": [
+        "Course_Name",
+        "Branch_Name"
+      ],
+      "!WriteColumns": [
+        "Course_Name",
+        "Branch_Name",
+        "Password"
+      ]
+    }
+  },
+  "student": {
+    "contact_info": {
+      "CRUD": "C---",
+      "!WriteColumns": [
+        "Email_Id",
+        "Message"
+      ]
+    },
+    "course_data": {
+      "CRUD": "-R--",
+      "!ReadColumns": [
+        "Subject_Name",
+        "Topic_Name",
+        "Password"
+      ]
+    },
+    "library_info": {
+      "CRUD": "--U-",
+      "!WriteColumns": [
+        "Enrollment_No",
+        "Course_Name",
+        "Branch_Name",
+        "Subject_Name"
+      ]
+    },
+    "student_info": {
+      "CRUD": "CRUD",
+      "!ReadColumns": [],
+      "!WriteColumns": [
+        "Student_id",
+        "First_Name",
+        "Last_Name",
+        "Course_Name",
+        "Branch_Name",
+        "Current_Year",
+        "Email_Id",
+        "Mobile_No",
+        "Country",
+        "Password",
+        "Confirm_Password"
+      ]
+    },
+    "student_login_info": {
+      "CRUD": "C--D",
+      "!WriteColumns": [
+        "Email_Id",
+        "Password"
+      ]
+    },
+    "student_workshop": {
+      "CRUD": "-RU-",
+      "!ReadColumns": [
+        "Course_Name",
+        "Branch_Name",
+        "Password"
+      ],
+      "!WriteColumns": [
+        "Enrollment_No",
+        "Branch_Name",
+        "Password"
+      ]
+    }
+  }
+}

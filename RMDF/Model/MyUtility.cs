@@ -230,7 +230,7 @@ namespace RMDF.Model
 
                                     case "staticList":
                                         JArray static_list = JArray.Parse(validation["keyValue"].ToString());
-                                       // static_list.Dump();
+                                        // static_list.Dump();
                                         string[] items = static_list.Select(jv => (string)jv).ToArray();
                                         if (items.Contains(col.Value.ToString()))
                                         {
@@ -243,7 +243,7 @@ namespace RMDF.Model
                                             msg_code.Add(validation["MsgTextNo"].ToString());
                                         }
                                         break;
-                                     default:
+                                    default:
                                         //"Validation not Found".Dump();
                                         break;
                                 }
@@ -294,5 +294,5 @@ namespace RMDF.Model
         }
 
     }
-    
+
 }

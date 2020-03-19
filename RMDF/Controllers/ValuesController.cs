@@ -29,7 +29,7 @@ namespace RMDF.Controllers
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            return "value=" + id;
+            return "value";
         }
 
         // POST api/values
@@ -65,7 +65,9 @@ namespace RMDF.Controllers
          }
 */
 
-    //}
+        //}
+
+
 
         // PUT api/values/5
         [HttpPut("{id}")]
@@ -78,6 +80,5 @@ namespace RMDF.Controllers
         public void Delete(int id)
         {
         }
-        
     }
 }
