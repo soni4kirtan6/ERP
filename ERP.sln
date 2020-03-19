@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RMDF", "RMDF\RMDF.csproj", "{192D1CB7-4AD5-4725-A834-E92B70CEBAFF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationPortal", "ConfigurationPortal\ConfigurationPortal.csproj", "{CF7989A8-C87C-43B3-AB4E-75A89FDED4EB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfigPortal", "ConfigPortal\ConfigPortal.csproj", "{A7E9E6FC-3704-4E4A-BF3C-D9C2AE6C56D0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "newmysql", "newmysql\newmysql.csproj", "{3F092FA6-42FC-408E-8377-F53835E8D537}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authentication", "Authentication\Authentication.csproj", "{FB365BD6-F62F-4EF6-8009-0B09E335E6E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authentication", "Authentication\Authentication.csproj", "{FB365BD6-F62F-4EF6-8009-0B09E335E6E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RMDF REST API", "RMDF REST API\RMDF REST API.csproj", "{304BCC3F-8D4E-4109-80B7-40CC08DB0AD4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{192D1CB7-4AD5-4725-A834-E92B70CEBAFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{192D1CB7-4AD5-4725-A834-E92B70CEBAFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{192D1CB7-4AD5-4725-A834-E92B70CEBAFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{192D1CB7-4AD5-4725-A834-E92B70CEBAFF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CF7989A8-C87C-43B3-AB4E-75A89FDED4EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CF7989A8-C87C-43B3-AB4E-75A89FDED4EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF7989A8-C87C-43B3-AB4E-75A89FDED4EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{FB365BD6-F62F-4EF6-8009-0B09E335E6E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB365BD6-F62F-4EF6-8009-0B09E335E6E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB365BD6-F62F-4EF6-8009-0B09E335E6E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{304BCC3F-8D4E-4109-80B7-40CC08DB0AD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{304BCC3F-8D4E-4109-80B7-40CC08DB0AD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{304BCC3F-8D4E-4109-80B7-40CC08DB0AD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{304BCC3F-8D4E-4109-80B7-40CC08DB0AD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

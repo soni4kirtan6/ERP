@@ -1,10 +1,6 @@
 {
-  "email_info": {
-    "person_name": "personname",
-    "email_id": "emailid"
-  },
-  "person_info": {
-    "person_name": "personname",
-    "person_id": "personid"
+  "table_name": {
+    "column_1": "column1",
+    "column_2": "column2"
   }
 }
