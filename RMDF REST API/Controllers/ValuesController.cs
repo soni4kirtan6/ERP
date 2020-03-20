@@ -47,6 +47,8 @@ namespace RMDF_REST_API.Controllers
             //Validation Engine
             JObject validated_json = MyUtility.ValidationEngine(mapped_json);
 
+            MyUtility.Authentication_query(mapped_json);
+
             return new string[] { "mapped_json", mapped_json.ToString(), "\nvalidated_json", validated_json.ToString() };
         }
         /* catch (Exception)
