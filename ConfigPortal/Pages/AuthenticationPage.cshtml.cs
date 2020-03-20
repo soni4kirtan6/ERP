@@ -23,7 +23,7 @@ namespace ConfigPortal.Pages
 
         }
 
-        
+
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
@@ -48,10 +48,10 @@ namespace ConfigPortal.Pages
                 string r = Request.Form["r-" + TableName];
                 string u = Request.Form["u-" + TableName];
                 string d = Request.Form["d-" + TableName];
-                if (c!=null && c.Equals("c")) crud+="C"; else crud+="-";
-                if (r!=null && r.Equals("r"))crud+="R"; else crud+="-";
-                if (u!=null && u.Equals("u"))crud+="U"; else crud+="-";
-                if (d!=null && d.Equals("d"))crud+="D"; else crud+="-";
+                if (c != null && c.Equals("c")) crud += "C"; else crud += "-";
+                if (r != null && r.Equals("r")) crud += "R"; else crud += "-";
+                if (u != null && u.Equals("u")) crud += "U"; else crud += "-";
+                if (d != null && d.Equals("d")) crud += "D"; else crud += "-";
 
                 if (!crud.Equals("----"))
                 {
@@ -81,14 +81,14 @@ namespace ConfigPortal.Pages
                     //add inverted columns
                     if (crud.Contains("R"))
                         table_sub_obj.Add("!ReadColumns", not_readArray);
-                    if(crud.Contains("C")|| crud.Contains("U")|| crud.Contains("D"))
+                    if (crud.Contains("C") || crud.Contains("U") || crud.Contains("D"))
                         table_sub_obj.Add("!WriteColumns", not_writeArray);
                     //add table only if one of crud is selected
-                    table_obj.Add(TableName,table_sub_obj);
+                    table_obj.Add(TableName, table_sub_obj);
                 }
 
             }
-                authentication_json.Add(Role, table_obj);
+            authentication_json.Add(Role, table_obj);
             //Think about how to initialize the json first time configuring
 
 

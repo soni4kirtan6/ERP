@@ -66,7 +66,7 @@ namespace ConfigPortal.Pages
                     JArray columns = new JArray();
 
                     com.CommandType = System.Data.CommandType.Text;
-                    com.CommandText = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='" + tablename + "' ORDER BY ORDINAL_POSITION";
+                    com.CommandText = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='" + tablename + "' AND TABLE_SCHEMA='" + DatabaseName + "' ORDER BY ORDINAL_POSITION";
 
                     MySqlDataReader rd = com.ExecuteReader();
 

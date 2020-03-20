@@ -7,7 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace RMDF.Model
+namespace RMDF_REST_API.Model
 {
     public class MyUtility
     {
@@ -178,6 +178,7 @@ namespace RMDF.Model
                                                 w_count++;
                                             //	(val_name+" : Fail").Dump();
                                             //	val_out.Add("msgCode",validation["MsgTextNo"].ToString());
+                                            msg_code.Add(validation["MsgTextNo"].ToString());
                                         }
                                         break;
                                     case "minLength":
@@ -188,6 +189,10 @@ namespace RMDF.Model
                                         }
                                         else
                                         {
+                                            if (validation["errorOrWarning"].ToString() == "e")
+                                                e_count++;
+                                            else
+                                                w_count++;
                                             //(val_name+" : Fail").Dump();
                                             msg_code.Add(validation["MsgTextNo"].ToString());
                                         }
@@ -200,6 +205,10 @@ namespace RMDF.Model
                                         }
                                         else
                                         {
+                                            if (validation["errorOrWarning"].ToString() == "e")
+                                                e_count++;
+                                            else
+                                                w_count++;
                                             //(val_name+" : Fail").Dump();
                                             msg_code.Add(validation["MsgTextNo"].ToString());
                                         }
@@ -223,6 +232,10 @@ namespace RMDF.Model
                                         }
                                         else
                                         {
+                                            if (validation["errorOrWarning"].ToString() == "e")
+                                                e_count++;
+                                            else
+                                                w_count++;
                                             //(val_name+" : Fail").Dump();
                                             msg_code.Add(validation["MsgTextNo"].ToString());
                                         }
@@ -239,6 +252,10 @@ namespace RMDF.Model
                                         }
                                         else
                                         {
+                                            if (validation["errorOrWarning"].ToString() == "e")
+                                                e_count++;
+                                            else
+                                                w_count++;
                                             //(val_name+" : Fail").Dump();
                                             msg_code.Add(validation["MsgTextNo"].ToString());
                                         }

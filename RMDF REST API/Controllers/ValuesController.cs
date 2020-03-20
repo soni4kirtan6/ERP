@@ -3,16 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using RMDF_REST_API.Model;
 using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json;
-using System.IO;
-using System.Text;
-using RMDF.Model;
-using MySql.Data.MySqlClient;
 
-namespace RMDF.Controllers
+namespace RMDF_REST_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

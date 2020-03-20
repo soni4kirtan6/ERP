@@ -4,8 +4,8 @@
     "windowsAuthentication": false, 
     "anonymousAuthentication": true, 
     "iisExpress": {
-      "applicationUrl": "http://localhost:12192",
-      "sslPort": 44365
+      "applicationUrl": "http://localhost:60780",
+      "sslPort": 44300
     }
   },
   "profiles": {
@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "RMDF": {
+    "RMDF_REST_API": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/values",
