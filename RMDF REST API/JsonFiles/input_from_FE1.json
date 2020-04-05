@@ -1,26 +1,35 @@
 {
-  "User Role": "UserRole1Student",
+  "User Role": "student",
   "Operations": {
-    "person_info": {
-      "CRUDType": "R",
+    "email_info": {
+      "CRUD": "R",
       "CRUDData": [
         {
-          "person_id": "123",
-          "first_name": "Raj",
-          "middle_name": "",
-          "last_name": "Thakor",
-          "gender": "Male"
+          "email_id": "11",
+          "email_address": "",
+          "first_name": ""
+
+        },
+        {
+          "email_id": "12",
+          "email_address": "",
+          "first_name": ""
         }
       ]
     },
-    "email_info": {
-      "CRUDType": "D",
+    "person_info": {
+      "CRUD": "R",
       "CRUDData": [
         {
-          "email_id": "110"
+          "person_id": "101",
+          "first_name": "",
+          "last_name": ""
+
         },
         {
-          "email_id": "113"
+          "person_id": "102",
+          "first_name": "",
+          "last_name": ""
         }
       ]
     }

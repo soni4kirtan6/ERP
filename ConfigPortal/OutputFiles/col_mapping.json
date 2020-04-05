@@ -1,6 +1,12 @@
 {
-  "table_name": {
-    "column_1": "column1",
-    "column_2": "column2"
+  "emailinfo": {
+    "emailid": "email_id",
+    "emailaddress": "email_address",
+    "firstname": "first_name"
+  },
+  "personinfo": {
+    "personid": "person_id",
+    "firstname": "first_name",
+    "lastname": "last_name"
   }
 }

@@ -41,15 +41,19 @@ namespace RMDF_REST_API.Controllers
                 cmd.ExecuteNonQuery();*/
 
             //Mapping FE json to Db_understandable json
+            //JObject input = JObject.Parse(value);
+            //JObject input_without_role =(JObject) input["Operations"];
             JObject mapped_json = MyUtility.MappingEngine(value);
 
 
             //Validation Engine
             JObject validated_json = MyUtility.ValidationEngine(mapped_json);
+            JObject mapped_json_with_role = JObject.Parse(value);
+            mapped_json_with_role["Operations"] = mapped_json;
 
-            MyUtility.Authentication_query(mapped_json);
+            JObject jout=MyUtility.Authentication_query(mapped_json_with_role);
 
-            return new string[] { "mapped_json", mapped_json.ToString(), "\nvalidated_json", validated_json.ToString() };
+            return new string[] { "mapped_json", mapped_json.ToString(), "\nvalidated_json", validated_json.ToString(), "\nauthentication_json" ,jout.ToString()};
         }
         /* catch (Exception)
          {

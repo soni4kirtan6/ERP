@@ -16,16 +16,16 @@ namespace Authentication
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             string text, text1;
 
-            var fileStream = new FileStream(@"C:\Users\Sumit Patel\source\repos\ERP\RMDF\JsonFiles\Authentication1.json", FileMode.Open, FileAccess.Read);
+            var fileStream = new FileStream(@"C:\Users\Sumit Patel\source\repos\ERP\RMDF REST API\JsonFiles\Authentication1.json", FileMode.Open, FileAccess.Read);
             using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
             { text = streamReader.ReadToEnd(); }
             JObject Auth_config = JObject.Parse(text);
 
-            var fileStream1 = new FileStream(@"C:\Users\Sumit Patel\source\repos\ERP\RMDF\JsonFiles\input_from_FE1.json", FileMode.Open, FileAccess.Read);
+            var fileStream1 = new FileStream(@"C:\Users\Sumit Patel\source\repos\ERP\RMDF REST API\JsonFiles\input_from_FE1.json", FileMode.Open, FileAccess.Read);
             using (var streamReader = new StreamReader(fileStream1, Encoding.UTF8))
             { text1 = streamReader.ReadToEnd(); }
             JObject inp_json = JObject.Parse(text1);
@@ -65,7 +65,7 @@ namespace Authentication
                 //      write_cols.Dump();
 
 
-                switch (table.Value["CRUDType"].ToString())
+                switch (table.Value["CRUD"].ToString())
                 {
                     case "C":
                         if (CRUD[0].ToString() == "C")
@@ -117,7 +117,7 @@ namespace Authentication
 
                                         Console.WriteLine(query);
 
-                                        string constr = "server=localhost;port=3306;uid=root;pwd=;database=test;charset=utf8;SslMode=none;";
+                                        string constr = "server=localhost;port=3306;uid=root;pwd=;database=sumit;charset=utf8;SslMode=none;";
                                         MySqlConnection con = new MySqlConnection(constr);
 
 
@@ -163,7 +163,7 @@ namespace Authentication
                                         //col.Key.Dump();
                                         col_names.Add(col.Key);
                                         col_values.Add(col.Value);
-                                        foreach (var i in write_cols)
+                                        foreach (var i in read_cols)
                                         {
                                             if (i.ToString() == col.Key)
                                             {
@@ -184,11 +184,11 @@ namespace Authentication
                                         {
                                             query = query + col_names[i] + ",";
                                         }
-                                        query = query + col_names[i] + " from " + table.Key.ToString() + " where " + col_names[0] + "=" + col_values[0];
+                                        query = query + col_names[i] + " from " + table.Key.ToString() + " where " + col_names[0] + "="+ "'" + col_values[0] + "'";
 
                                         Console.WriteLine(query);
 
-                                        string constr = "server=localhost;port=3306;uid=root;pwd=;database=test;charset=utf8;SslMode=none;";
+                                        string constr = "server=localhost;port=3306;uid=root;pwd=;database=sumit;charset=utf8;SslMode=none;";
                                         MySqlConnection con = new MySqlConnection(constr);
 
                                         DataTable dt = new DataTable();                                                                     //for read
@@ -285,7 +285,7 @@ namespace Authentication
 
                                     Console.WriteLine(query);
 
-                                      string constr = "server=localhost;port=3306;uid=root;pwd=;database=test;charset=utf8;SslMode=none;";
+                                      string constr = "server=localhost;port=3306;uid=root;pwd=;database=sumit;charset=utf8;SslMode=none;";
                                           MySqlConnection con = new MySqlConnection(constr);
 
                                         
@@ -356,7 +356,7 @@ namespace Authentication
 
                                         Console.WriteLine(query);
 
-                                       string constr = "server=localhost;port=3306;uid=root;pwd=;database=test;charset=utf8;SslMode=none;";
+                                       string constr = "server=localhost;port=3306;uid=root;pwd=;database=sumit;charset=utf8;SslMode=none;";
                                         MySqlConnection con = new MySqlConnection(constr);
 
 

@@ -1,3 +1,4 @@
 {
-  "table_name": "tablename"
+  "emailinfo": "email_info",
+  "personinfo": "person_info"
 }
