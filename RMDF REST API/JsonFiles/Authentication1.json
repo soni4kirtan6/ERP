@@ -1,45 +1,19 @@
 {
-	"UserRole1Student": {
-		"person_info": {
-			"CRUD": "-RUD",
-			"!ReadColumns": [],
-			"!WriteColumns": [
-				"category"
-			]
-		},
-		"education_info": {
-			"CRUD": "-RU-",
-			"!ReadColumns": [],
-			"!WriteColumns": [
-				"passing_year",
-    			"passing_grade"
-			]
-		},
-		"email_info": {
-			"CRUD": "-RUD",
-			"!ReadColumns": [],
-			"!WriteColumns": []
-		}
-	},
-	"UserRole2Clerk": {
-		"person_info": {
-			"CRUD": "-RU-",
-			"!ReadColumns": [
-				"birthdate",
-				"ethinicity"
-			],
-			"!WriteColumns": [
-				"birthdate",
-				"ethinicity"
-			]
-		},
-		"education_info": {
-			"CRUD": "-RU-",
-			"!ReadColumns": [],
-			"!WriteColumns": [
-				"degree",
-				"degree_subject"
-			]
-		}
-	}
+  "student": {
+    "email_info": {
+      "CRUD": "CR--",
+      "!ReadColumns": [],
+      "!WriteColumns": [
+        "person_name",
+        "email_id"
+      ]
+    },
+    "person_info": {
+      "CRUD": "CR--",
+      "!ReadColumns": [],
+      "!WriteColumns": [
+        "person_id"
+      ]
+    }
+  }
 }

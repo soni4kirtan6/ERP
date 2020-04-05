@@ -41,6 +41,7 @@ namespace RMDF_REST_API.Model
 
                     return j_out;
                 }
+                                                                                               //change
                 j_out.Add(mapping[prop.Name].ToString(), j_inp[prop.Name]);
             }
             return j_out;
@@ -51,12 +52,12 @@ namespace RMDF_REST_API.Model
             //CHACK THE JSON FORMATE
             try
             {
-                JObject main_input_json = JObject.Parse(value);
-
+                JObject input = JObject.Parse(value);
+                JObject main_input_json =(JObject) input["Operations"];
 
                 string text;
 
-                var fileStream = new FileStream(@"JsonFiles\db_table_mapping.json", FileMode.Open, FileAccess.Read);
+                var fileStream = new FileStream(@"C:\Users\Sumit Patel\source\repos\ERP\ConfigPortal\OutputFiles\table_mapping.json", FileMode.Open, FileAccess.Read);
                 using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
                 {
                     text = streamReader.ReadToEnd();
@@ -64,7 +65,7 @@ namespace RMDF_REST_API.Model
                 JObject db_table_mapping = JObject.Parse(text);
 
                 string text1;
-                var fileStream1 = new FileStream(@"JsonFiles\tb_column_mapping.json", FileMode.Open, FileAccess.Read);
+                var fileStream1 = new FileStream(@"C:\Users\Sumit Patel\source\repos\ERP\ConfigPortal\OutputFiles\col_mapping.json", FileMode.Open, FileAccess.Read);
                 using (var streamReader1 = new StreamReader(fileStream1, Encoding.UTF8))
                 {
                     text1 = streamReader1.ReadToEnd();
@@ -109,7 +110,8 @@ namespace RMDF_REST_API.Model
                 JObject main_output_json = Give_mapped(main_input_json, db_table_mapping);
                 //check for error not needed here
 
-                return main_output_json;
+                 return main_output_json;
+
 
             }
             catch (Exception ex)
@@ -119,15 +121,17 @@ namespace RMDF_REST_API.Model
                 error_handler.Add("msg", ex.Message + " json formate error");
 
                 return error_handler;
+
             }
         }
 
         public static JObject ValidationEngine(JObject j_inp)
         {
+            
             JObject j_out = new JObject();
             string text;
 
-            var fileStream = new FileStream(@"JsonFiles\validationConfig.json", FileMode.Open, FileAccess.Read);
+            var fileStream = new FileStream(@"C:\Users\Sumit Patel\source\repos\ERP\ConfigPortal\OutputFiles\validationConfig.json", FileMode.Open, FileAccess.Read);
             using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
             { text = streamReader.ReadToEnd(); }
             JObject val_config = JObject.Parse(text);
@@ -316,11 +320,15 @@ namespace RMDF_REST_API.Model
         }
 
 
-        public static void Authentication_query(JObject inp_json)
+        public static JObject Authentication_query(JObject inp_json)
         {
             string text;
 
-            var fileStream = new FileStream(@"C:\Users\Sumit Patel\source\repos\ERP\RMDF\JsonFiles\Authentication1.json", FileMode.Open, FileAccess.Read);
+            JObject Auth_out = new JObject();
+            JArray output = new JArray();
+
+
+            var fileStream = new FileStream(@"C:\Users\Sumit Patel\source\repos\ERP\ConfigPortal\OutputFiles\Authentication.json", FileMode.Open, FileAccess.Read);
             using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
             { text = streamReader.ReadToEnd(); }
             JObject Auth_config = JObject.Parse(text);
@@ -348,10 +356,13 @@ namespace RMDF_REST_API.Model
             foreach (var table in (JObject)inp_json["Operations"])
             {
                 int temp = 0;
+                int count = 1;
                 //		table.Value.Dump();
                 //		table.Value["CRUDType"].ToString().Dump();
 
                 CRUD = user_role[table.Key]["CRUD"].ToString();
+
+                JObject jout = new JObject();
                 JArray write_cols = new JArray();
                 JArray read_cols = new JArray();
 
@@ -360,13 +371,14 @@ namespace RMDF_REST_API.Model
                 //      write_cols.Dump();
 
 
-                switch (table.Value["CRUDType"].ToString())
+                switch (table.Value["CRUD"].ToString())
                 {
                     case "C":
                         if (CRUD[0].ToString() == "C")
                         {
                             foreach (JObject columns in table.Value["CRUDData"])
                             {
+                                JObject each_jobject = new JObject();
                                 JArray col_names = new JArray();
                                 JArray col_values = new JArray();
                                 foreach (var col in columns)
@@ -412,7 +424,7 @@ namespace RMDF_REST_API.Model
 
                                         Console.WriteLine(query);
 
-                                        string constr = "server=localhost;port=3306;uid=root;pwd=;database=test;charset=utf8;SslMode=none;";
+                                        string constr = "server=localhost;port=3306;uid=root;pwd=;database=testcase;charset=utf8;SslMode=none;";
                                         MySqlConnection con = new MySqlConnection(constr);
 
 
@@ -424,7 +436,8 @@ namespace RMDF_REST_API.Model
                                         con.Open();
                                         com.ExecuteNonQuery();
 
-                                        Console.WriteLine("success");
+                                        //  Console.WriteLine("success");
+                                        each_jobject.Add(""+count,"New row created");
                                         con.Close();
 
                                     }
@@ -438,6 +451,7 @@ namespace RMDF_REST_API.Model
                                 {
                                     Console.WriteLine("failure");
                                 }
+                                jout.Add(table.Key + " " + count++, each_jobject);
                             }
                         }
                         else
@@ -451,6 +465,7 @@ namespace RMDF_REST_API.Model
                         {
                             foreach (JObject columns in table.Value["CRUDData"])
                             {
+                                JObject each_jobject = new JObject();
                                 JArray col_names = new JArray();
                                 JArray col_values = new JArray();
                                 foreach (var col in columns)
@@ -458,7 +473,7 @@ namespace RMDF_REST_API.Model
                                     //col.Key.Dump();
                                     col_names.Add(col.Key);
                                     col_values.Add(col.Value);
-                                    foreach (var i in write_cols)
+                                    foreach (var i in read_cols)
                                     {
                                         if (i.ToString() == col.Key)
                                         {
@@ -479,11 +494,11 @@ namespace RMDF_REST_API.Model
                                         {
                                             query = query + col_names[i] + ",";
                                         }
-                                        query = query + col_names[i] + " from " + table.Key.ToString() + " where " + col_names[0] + "=" + col_values[0];
+                                        query = query + col_names[i] + " from " + table.Key.ToString() + " where " + col_names[0] + "="+col_values[0];
 
                                         Console.WriteLine(query);
 
-                                        string constr = "server=localhost;port=3306;uid=root;pwd=;database=test;charset=utf8;SslMode=none;";
+                                        string constr = "server=localhost;port=3306;uid=root;pwd=;database=testcase;charset=utf8;SslMode=none;";
                                         MySqlConnection con = new MySqlConnection(constr);
 
                                         DataTable dt = new DataTable();                                                                     //for read
@@ -491,7 +506,7 @@ namespace RMDF_REST_API.Model
                                         adapt = new MySqlDataAdapter(query, con);
                                         adapt.Fill(dt);
 
-                                        JObject jout = new JObject();
+                                       // JObject jout = new JObject();
                                         JArray columns_ = new JArray();
                                         JArray rows = new JArray();
                                         string ColumnName;
@@ -502,7 +517,7 @@ namespace RMDF_REST_API.Model
                                             columns_.Add(ColumnName);
 
                                         }
-                                        jout.Add("Columns", columns_);
+                                        each_jobject.Add("Columns", columns_);
                                         foreach (DataRow row in dt.Rows)
                                         {
                                             JArray values = new JArray();
@@ -515,12 +530,14 @@ namespace RMDF_REST_API.Model
                                             }
                                             rows.Add(values);
                                         }
-                                        jout.Add("Rows", rows);
-                                        Console.WriteLine(jout);
+                                        each_jobject.Add("Rows", rows);
+                                        //   Console.WriteLine(jout);
+
+                                     //   output.Add(jout);
 
 
-                                        Console.WriteLine("success");
-                                        con.Close();
+                                     //   Console.WriteLine("success");
+                                     //   con.Close();
 
                                     }
                                     catch (MySql.Data.MySqlClient.MySqlException ex)
@@ -533,6 +550,7 @@ namespace RMDF_REST_API.Model
                                 {
                                     Console.WriteLine("failure");
                                 }
+                                jout.Add(table.Key+" "+count++,each_jobject);
                             }
                         }
                         else
@@ -545,6 +563,7 @@ namespace RMDF_REST_API.Model
                         {
                             foreach (JObject columns in table.Value["CRUDData"])
                             {
+                                JObject each_jobject = new JObject();
                                 JArray col_names = new JArray();
                                 JArray col_values = new JArray();
                                 foreach (var col in columns)
@@ -580,7 +599,7 @@ namespace RMDF_REST_API.Model
 
                                         Console.WriteLine(query);
 
-                                        string constr = "server=localhost;port=3306;uid=root;pwd=;database=test;charset=utf8;SslMode=none;";
+                                        string constr = "server=localhost;port=3306;uid=root;pwd=;database=testcase;charset=utf8;SslMode=none;";
                                         MySqlConnection con = new MySqlConnection(constr);
 
 
@@ -593,6 +612,7 @@ namespace RMDF_REST_API.Model
                                         con.Open();
                                         com.ExecuteNonQuery();
 
+                                        each_jobject.Add("" + count, "Row Updated");
                                         Console.WriteLine("success");
                                         con.Close();
 
@@ -607,6 +627,7 @@ namespace RMDF_REST_API.Model
                                 {
                                     Console.WriteLine("failure");
                                 }
+                                jout.Add(table.Key + " " + count++, each_jobject);
                             }
                         }
                         else
@@ -619,6 +640,7 @@ namespace RMDF_REST_API.Model
                         {
                             foreach (JObject columns in table.Value["CRUDData"])
                             {
+                                JObject each_jobject = new JObject();
                                 JArray col_names = new JArray();
                                 JArray col_values = new JArray();
                                 foreach (var col in columns)
@@ -651,7 +673,7 @@ namespace RMDF_REST_API.Model
 
                                         Console.WriteLine(query);
 
-                                        string constr = "server=localhost;port=3306;uid=root;pwd=;database=test;charset=utf8;SslMode=none;";
+                                        string constr = "server=localhost;port=3306;uid=root;pwd=;database=testcase;charset=utf8;SslMode=none;";
                                         MySqlConnection con = new MySqlConnection(constr);
 
 
@@ -664,6 +686,7 @@ namespace RMDF_REST_API.Model
                                         con.Open();
                                         com.ExecuteNonQuery();
 
+                                        each_jobject.Add("" + count, "Row deleted");
                                         Console.WriteLine("success");
                                         con.Close();
 
@@ -677,6 +700,7 @@ namespace RMDF_REST_API.Model
                                 {
                                     Console.WriteLine("failure");
                                 }
+                                jout.Add(table.Key + " " + count++, each_jobject);
                             }
                         }
                         else
@@ -686,10 +710,14 @@ namespace RMDF_REST_API.Model
                         break;
                     default:
                         break;
+                
                 }
+                output.Add(jout);
+                //Auth_out.Add("output",output); 
             }
+            Auth_out.Add("output", output);
 
-
+            return Auth_out;
 
         }
 

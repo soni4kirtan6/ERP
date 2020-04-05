@@ -56,7 +56,7 @@ namespace ConfigPortal.Pages
             JObject table_mapping = new JObject();
             for (int i = 0; i < Tables.Length; i++)
             {
-                table_mapping.Add(Tables[i],AlternateName[i]);
+                table_mapping.Add(AlternateName[i],Tables[i]);
             }
 
                 Directory.CreateDirectory(Environment.CurrentDirectory + "/OutputFiles");

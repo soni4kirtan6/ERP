@@ -88,6 +88,12 @@ namespace ConfigPortal.Pages
 
 
                 System.IO.File.WriteAllText(path, dbstructure.ToString());
+
+                Directory.CreateDirectory(Environment.CurrentDirectory + "/OutputFiles");
+                path = Environment.CurrentDirectory + "/OutputFiles/" + "ConnectionString.json";
+
+
+                System.IO.File.WriteAllText(path, constr.ToString());
                 //return RedirectToPage("./Index");
 
             }

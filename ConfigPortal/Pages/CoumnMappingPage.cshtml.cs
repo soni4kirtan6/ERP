@@ -31,6 +31,8 @@ namespace ConfigPortal.Pages
             {
                 return Page();
             }
+            string path1 = Environment.CurrentDirectory + "/OutputFiles/" + "table_mapping.json";
+            JObject table_mapping = JObject.Parse(System.IO.File.ReadAllText(path1));
 
             JObject col_mapping=new JObject();
             foreach (var table in dbstructure.Properties())
@@ -41,9 +43,17 @@ namespace ConfigPortal.Pages
                 {
                     string c_Column = col.ToString();
                     string AlternateName = Request.Form[c_Table+"-"+c_Column];
-                    columns.Add(c_Column, AlternateName);
+                    columns.Add(AlternateName, c_Column);
                 }
-                col_mapping.Add(c_Table, columns);
+
+                foreach (var x in table_mapping)
+                {
+                    if (x.Value.ToString().Equals(c_Table))
+                    {
+                        c_Table = x.Key.ToString();
+                    }
+                }
+                col_mapping.Add(c_Table, columns);//done
             }
 
             
