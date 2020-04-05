@@ -33,18 +33,26 @@
 
                                     <label>Type of Validation:</label>
 
-                                    <select class="form-control type-sel" id="type_sel-@tableName-@colName-0" name="type_sel-@tableName-@colName-0" >
+                                    <select class="form-control type-sel" id="type_sel-@tableName-@colName-0" name="type_sel-@tableName-@colName-0">
                                         <option>CanBeEmpty</option>
+                                        @*true false*@
                                         <option>Maxlength</option>
+                                        @*numeric*@
                                         <option>MinLength</option>
+                                        @*Nymeric*@
                                         <option>RegEx</option>
+                                        @*Drop down, and if customRegEx selected than text*@
                                         <option>Static List</option>
+                                        @*Multiple entries seperated by ; or some delimeter*@
                                     </select>
                                     <br />
                                     <label>Value :</label>
-                                    <input class="input--style-5 valu-" placeholder="Enter Value" type="text" id="value-@tableName-@colName-0" name="value-@tableName-@colName-0"><br />
+                                    <input class="form-control valu-" placeholder="Enter Value" type="text" id="value-@tableName-@colName-0" name="value-@tableName-@colName-0"><br />
                                     <label>ErrorOrWarning :</label>
-                                    <input class="input--style-5 e-w" placeholder="e/w" type="text" id="E_W-@tableName-@colName-0" name="E_W-@tableName-@colName-0"><br />
+                                    @*<input class="form-control e-w" placeholder="e/w" type="radio" id="E_W-@tableName-@colName-0" name="E_W-@tableName-@colName-0"><br />*@
+                                    
+                                    <label class="radio-inline"><input type="radio" id="E_W-@tableName-@colName-0" name="E_W-@tableName-@colName-0" value="e" checked>Error</label>
+                                    <label class="radio-inline"><input type="radio" id="E_W-@tableName-@colName-0" name="E_W-@tableName-@colName-0" value="w">Warning</label>
                                     <br />
                                 </div>
                             </div>
@@ -57,7 +65,7 @@
         </table>
     }
     <div>
-        <button class="btn btn--radius-2 btn--red m-t-30" type="submit" asp-page="#">Save & Next</button>
+        <button class="btn btn-success" type="submit" asp-page="#">Save & Next</button>
         @*<label class="label--desc" style="margin-top:10px; margin-left:25px" asp-for="ConStr">@Model.ConStr</label>*@
     </div>
 </form>
@@ -101,11 +109,8 @@
 
         colCount[col] = colCount[col] + 1;
 
-        clone.id = col + "-" +colCount[col]; // there can only be one element with an ID
-        valNo.innerText = "Validation " + (colCount[col] + 1)+":";
-        typeSel.id = "type_sel-" + col + "-" + colCount[col];
-        value.id = "value-" + col + "-" +colCount[col];
-        e_w.id = "E_W-" + col + "-" + colCount[col];
+
+
 
         typeSel.setAttribute("name",(typeSel.id));
         value.setAttribute("name",(value.id));

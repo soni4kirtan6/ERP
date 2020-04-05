@@ -32,8 +32,8 @@ namespace ConfigPortal.Pages
                 return Page();
             }
 
-            //
-            if(Request.Form[nameof(ServerName)]=="" || Request.Form[nameof(DatabaseName)] == "" || Request.Form[nameof(UserName)] == "")
+            // server=localhost;port=3306;uid=root;pwd=;database=testcase;charset=utf8;SslMode=none;
+            if (Request.Form[nameof(ServerName)]=="" || Request.Form[nameof(DatabaseName)] == "" || Request.Form[nameof(UserName)] == "")
             {
                 return Page();
             }
@@ -88,6 +88,14 @@ namespace ConfigPortal.Pages
 
 
                 System.IO.File.WriteAllText(path, dbstructure.ToString());
+
+                Directory.CreateDirectory(Environment.CurrentDirectory + "/OutputFiles");
+                path = Environment.CurrentDirectory + "/OutputFiles/" + "ConnectionString.json";
+
+
+                System.IO.File.WriteAllText(path, constr.ToString());
+
+
                 //return RedirectToPage("./Index");
 
             }
