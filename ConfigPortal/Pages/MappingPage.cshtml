@@ -16,27 +16,27 @@
 <body>
   @*  <p>Con String ::: </p>*@
     @*<p>@Model.dbstruct</p>*@
-    <div class="name" style="font-size:35px; color:#736AFF; font-weight:bold; text-align:center">2) Table and Column Mapping</div><br />
-    <form method="POST" name="tableMappingForm">
-        <table class="table">
+    <div class="name text-center  text-white alert-warning text-justify  container text-secondary " ><h1>2) Table and Column Mapping </h1></div><br />
+    <form method="POST" name="tableMappingForm" class="text-center mt-4 container  border-white border" style="border-radius:17px">
+        <table class=" table table-secondary table-hover mt-3 table-borderless" style="border-radius:17px" >
             <thead>
-                <tr>
+                <tr class="text-success">
                     <th scope="col"><h3>Table Name</h3></th>
-                    <th scope="col">Alternate name</th>
+                    <th scope="col"><h3>Alternate name </h3></th>
                 </tr>
             </thead>
             @for (int i = 0; i < Model.Tables.Length; i++)
             {
                 <tbody>
                     <tr>
-                        <th scope="row">@Model.Tables[i]</th>
-                        <td><input class="input--style-5" type="text" asp-for="@Model.AlternateName[i]"/></td>
+                        <th scope="row" class="text-black-50"><h4>@Model.Tables[i]</h4></th>
+                        <td><h4><input class="input--style-5" type="text" asp-for="@Model.AlternateName[i]"/></h4></td>
                     </tr>
                 </tbody>
             }
         </table>
         <div>
-            <button class="btn btn-success" type="submit">Save & Next</button>
+            <button class="btn btn-primary mb-3" type="submit">Save & Next</button>
             @*<label class="label--desc" style="margin-top:10px; margin-left:25px" asp-for="ConStr">@Model.ConStr</label>*@
         </div>
     </form>

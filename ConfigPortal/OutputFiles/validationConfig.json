@@ -10,17 +10,17 @@
     ],
     "email_address": [
       {
-        "typeKey": "Maxlength",
-        "keyValue": "50",
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
         "errorOrWarning": "e",
         "MsgTextNo": "1002"
       }
     ],
     "first_name": [
       {
-        "typeKey": "MinLength",
-        "keyValue": "2",
-        "errorOrWarning": "w",
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
         "MsgTextNo": "1003"
       }
     ]
@@ -36,16 +36,16 @@
     ],
     "first_name": [
       {
-        "typeKey": "MinLength",
-        "keyValue": "2",
-        "errorOrWarning": "w",
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
         "MsgTextNo": "1005"
       }
     ],
     "last_name": [
       {
-        "typeKey": "MinLength",
-        "keyValue": "2",
+        "typeKey": "Maxlength",
+        "keyValue": "false",
         "errorOrWarning": "w",
         "MsgTextNo": "1006"
       }

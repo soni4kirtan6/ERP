@@ -10,5 +10,16 @@
       "!ReadColumns": [],
       "!WriteColumns": []
     }
+  },
+  "": {},
+  "axaxa": {
+    "email_info": {
+      "CRUD": "--UD",
+      "!WriteColumns": [
+        "email_id",
+        "email_address",
+        "first_name"
+      ]
+    }
   }
 }
