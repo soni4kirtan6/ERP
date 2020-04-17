@@ -6,31 +6,38 @@
 }
 
 
-<div class="name" style="z-index:0; font-size:23px; color:#736AFF; font-style:oblique; font-weight:bold">1) Generate Connection String</div>
-<div class="jumbotron justify-content-md-center" style="z-index:30;">
-    <form method="POST" name="conForm">
-        <div class="form-group col-lg-6">
-            <div class="name">Enter Server Name</div>
+<div class="name   text-white alert-warning text-center container text-secondary pb-1 "  ><h1>1) Generate Connection String</h1></div>
+<div class="text-justify mt-5 container border-white border" style="border-radius:17px">
+    <form method="POST" name="conForm" class="   " >
+        <div class="mt-4 mb-4 ml-5 ">
+        <div class="form-group ">
+            <div class="name text-success"><h4>Enter Server Name</h4></div>
             <input class="form-control" type="text" asp-for="ServerName" placeholder="Ex. localhost,192.168.1.50" />
         </div>
-        <div class="form-group col-lg-6">
-            <div class="name">Enter Database Name</div>
+        <div class="form-group">
+            <div class="name text-success"><h4>Enter Database Name</h4></div>
             <input class="form-control" type="text" asp-for="DatabaseName" placeholder="Ex. ERP, ProjectManagementSystem" />
         </div>
-        <div class="form-group col-lg-6">
-            <div class="name">Enter Username</div>
+        <div class="form-group">
+            <div class="name text-success"><h4>Enter Username</h4></div>
             <input class="form-control" type="text" asp-for="UserName" placeholder="Username for database authentication" />
         </div>
-        <div class="form-group col-lg-6">
-            <div class="name">Enter Password</div>
+        <div class="form-group">
+            <div class="name text-success"><h4>Enter Password</h4></div>
             <input class="form-control" type="text" asp-for="Password" placeholder="Password for database authentication" />
         </div>
-        
-       
+
+        <div class="form-check ml-3 mb-2 text-white mt-4" >
+            <label class="form-check-label">
+                <input class="form-check-input"  type="checkbox">Remember me
+            </label>
+        </div>
+
 
         <div>
-            <button class="btn btn-success" type="submit">Save & Next</button>
+            <button class="btn btn-primary ml-3 mt-3" type="submit">Save & Next</button>
             @*<label class="label--desc" style="margin-top:10px; margin-left:25px" asp-for="ConString">@Model.ConString</label>*@
         </div>
+</div>
     </form>
 </div>

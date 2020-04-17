@@ -4,31 +4,35 @@
     ViewData["Title"] = "CoumnMappingPage";
 }
 
-<div class="name" style="font-size:35px; color:#736AFF; font-weight:bold; text-align:center;" >2) Table and Column Mapping</div><br /><br />
-<form method="POST" name="tableMappingForm">
+<div class="name text-center  text-white alert-warning text-justify  container text-secondary" ><h1>2) Table and Column Mapping </h1></div><br /><br />
+<form method="POST" name="tableMappingForm"class="text-center mt-1 container  border-white border mb-3" style="border-radius:17px">
     @foreach(var table in Model.dbstructure.Properties())
     {
-    <h2>Table : @table.Name</h2>
-    <table class="table">
+        
+    <h2 class="text-white-50 mt-3">Table : @table.Name</h2>
+    <table class=" table table-secondary table-hover mt-3 table-borderless" style="border-radius:17px" >
         <thead>
-            <tr>
-                <th scope="col"><h3>Column Name</h3></th>
-                <th scope="col">Alternate name</th>
+            <tr class="text-success">
+                <th scope="col"><h3>Table Name</h3></th>
+                <th scope="col"><h3>Alternate name </h3></th>
             </tr>
         </thead>
         @foreach (var col in table.Value)
         {
             <tbody>
                 <tr>
-                    <th scope="row">@col.ToString()</th>
+                    <th scope="row" class="text-black-50"><h4>@col.ToString()</h4></th>
                     <td><input class="input--style-5" type="text" name="@table.Name-@col"/></td>
                 </tr>
             </tbody>
         }
+        
     </table>
+    <br/>
+
     }
     <div>
-        <button class="btn btn-success" type="submit">Save & Next</button>
+        <button class="btn btn-primary mb-3" type="submit">Save & Next</button>
         @*<label class="label--desc" style="margin-top:10px; margin-left:25px" asp-for="ConStr">@Model.ConStr</label>*@
     </div>
 </form>

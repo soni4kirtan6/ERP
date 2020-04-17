@@ -1,1 +1,1 @@
-server=localhost;port=3306;uid=root;pwd=;database=erp_system;charset=utf8;SslMode=none;
+server=localhost;port=3306;uid=root;pwd=;database=testcase;charset=utf8;SslMode=none;
