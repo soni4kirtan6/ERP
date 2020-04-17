@@ -12,7 +12,7 @@ namespace ConfigPortal.Pages
     public class AuthenticationPageModel : PageModel
     {
         public JObject dbstructure;
-
+        public string error_display="none";
         public AuthenticationPageModel()
         {
             string path = Environment.CurrentDirectory + "/OutputFiles/" + "DB_Structure.json";
@@ -88,17 +88,27 @@ namespace ConfigPortal.Pages
                 }
 
             }
-            authentication_json.Add(Role, table_obj);
+            try
+            {
+                authentication_json.Add(Role, table_obj);
+
+                Directory.CreateDirectory(Environment.CurrentDirectory + "/OutputFiles");
+                string path1 = Environment.CurrentDirectory + "/OutputFiles/" + "Authentication.json";
+
+
+                System.IO.File.WriteAllText(path1, authentication_json.ToString());
+                return RedirectToPage("./AuthenticationPage");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Please Enter a unique name for role !!!");
+                error_display = "inline-block";
+                return new PageResult();
+            }
             //Think about how to initialize the json first time configuring
 
 
 
-            Directory.CreateDirectory(Environment.CurrentDirectory + "/OutputFiles");
-            string path1 = Environment.CurrentDirectory + "/OutputFiles/" + "Authentication.json";
-
-
-            System.IO.File.WriteAllText(path1, authentication_json.ToString());
-            return RedirectToPage("./AuthenticationPage");
             //How will we redirect last time ????
         }
 

@@ -50,7 +50,19 @@ namespace ConfigPortal.Pages
                         string E_W = Request.Form["E_W-" + c_Table + "-" + c_Column + "-" + i];
 
                         val_obj.Add("typeKey",type_sel);
-                        val_obj.Add("keyValue", value);
+                        
+                        if(type_sel.Equals("Static List"))
+                        {
+                            string[] values = value.Split(";");
+                            JArray Jvalues = new JArray();
+                            foreach (var v in values){Jvalues.Add(v);}
+                            val_obj.Add("keyValue", Jvalues);
+                        }
+                        else
+                        {
+                            val_obj.Add("keyValue", value);
+
+                        }
                         val_obj.Add("errorOrWarning", E_W);
                         val_obj.Add("MsgTextNo", (code++).ToString());//doubt individual val or val type has unique no
                         //code++;
@@ -66,9 +78,12 @@ namespace ConfigPortal.Pages
 
             Directory.CreateDirectory(Environment.CurrentDirectory + "/OutputFiles");
             string path = Environment.CurrentDirectory + "/OutputFiles/" + "validationConfig.json";
-
-
             System.IO.File.WriteAllText(path, val_config.ToString());
+
+            Directory.CreateDirectory(Environment.CurrentDirectory + "/OutputFiles");
+            path = Environment.CurrentDirectory + "/OutputFiles/" + "Authentication.json";
+            System.IO.File.WriteAllText(path, "{}");
+
             return RedirectToPage("./AuthenticationPage");
         }
     }

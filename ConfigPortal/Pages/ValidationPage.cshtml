@@ -51,8 +51,8 @@
                                     <label>ErrorOrWarning :</label>
                                     @*<input class="form-control e-w" placeholder="e/w" type="radio" id="E_W-@tableName-@colName-0" name="E_W-@tableName-@colName-0"><br />*@
                                     
-                                    <label class="radio-inline"><input type="radio" id="E_W-@tableName-@colName-0" name="E_W-@tableName-@colName-0" value="e" checked>Error</label>
-                                    <label class="radio-inline"><input type="radio" id="E_W-@tableName-@colName-0" name="E_W-@tableName-@colName-0" value="w">Warning</label>
+                                    <label class="radio-inline "><input type="radio" class="e-w" id="E-@tableName-@colName-0" name="E_W-@tableName-@colName-0" value="e" checked>Error</label>
+                                    <label class="radio-inline "><input type="radio" class="e-w" id="W-@tableName-@colName-0" name="E_W-@tableName-@colName-0" value="w">Warning</label>
                                     <br />
                                 </div>
                             </div>
@@ -80,12 +80,12 @@
             hiddenCounts[i].value = 1;
             //alert(hiddenCounts[i].value);
         }
-        var ew = document.getElementsByClassName("e-w");
-        //alert(ew.length);
-        for (var i = 0; i < ew.length; i++) {
-            ew[i].value = "e";
-            //alert(ew[i].value);
-        }
+        //var ew = document.getElementsByClassName("e-w");
+        ////alert(ew.length);
+        //for (var i = 0; i < ew.length; i++) {
+        //    ew[i].value = "e";
+        //    //alert(ew[i].value);
+        //}
 
         var val = document.getElementsByClassName("valu-");
         //alert(ew.length);
@@ -105,16 +105,24 @@
         var valNo = clone.getElementsByClassName("val-no")[0];
         var typeSel = clone.getElementsByClassName("type-sel")[0];
         var value = clone.getElementsByClassName("valu-")[0];
-        var e_w = clone.getElementsByClassName("e-w")[0];
+        var e = clone.getElementsByClassName("e-w")[0];
+        var w = clone.getElementsByClassName("e-w")[1];
 
         colCount[col] = colCount[col] + 1;
 
 
-
+        clone.id = col + "-" + colCount[col]; // there can only be one element with an ID
+        valNo.innerText = "Validation " + (colCount[col] + 1) + ":";
+        typeSel.id = "type_sel-" + col + "-" + colCount[col];
+        value.id = "value-" + col + "-" + colCount[col];
+        e.id = "E-" + col + "-" + colCount[col];
+        w.id = "W-" + col + "-" + colCount[col];
 
         typeSel.setAttribute("name",(typeSel.id));
         value.setAttribute("name",(value.id));
-        e_w.setAttribute("name",(e_w.id));
+        e.setAttribute("name", ("E_W-" + col + "-" + colCount[col]));
+        w.setAttribute("name", ("E_W-" + col + "-" + colCount[col]));
+
 
         //alert(value);
         clone.onclick = duplicate; // event handlers are not cloned

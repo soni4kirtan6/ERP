@@ -16,10 +16,13 @@
 <form method="post">
     <div id="rolemaster0" class="border border-dark" style="padding:10px;margin:10px;">
         <h4>Role id</h4>
-        <input id="role_id" name="role_id" class="input-sm input--style-5 col-sm-3" type="text" />
+        <input id="role_id" name="role_id" class="form-control col-sm-3" type="text" />
         <br>
         <h4>Role Name</h4>
-        <input id="role_name" name="role_name" class="input--style-5 col-sm-3" type="text" />
+        <input id="role_name" name="role_name" class="form-control col-sm-3" type="text" />
+        <div class="alert alert-danger col-sm-5" role="alert" style="display:@Model.error_display">
+            Role name already exist, Please choose a different unique name
+        </div>
         <br>
         <br>
 

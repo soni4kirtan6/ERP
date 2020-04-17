@@ -60,9 +60,8 @@ namespace ConfigPortal.Pages
 
             Directory.CreateDirectory(Environment.CurrentDirectory + "/OutputFiles");
             string path = Environment.CurrentDirectory + "/OutputFiles/" + "col_mapping.json";
-
-
             System.IO.File.WriteAllText(path, col_mapping.ToString());
+
             return RedirectToPage("./ValidationPage");
         }
     }
