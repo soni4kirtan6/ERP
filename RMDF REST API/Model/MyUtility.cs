@@ -322,7 +322,7 @@ namespace RMDF_REST_API.Model
 
         public static JObject Authentication_query(JObject inp_json)
         {
-            string text;
+            string text,constr;
 
             JObject Auth_out = new JObject();
             JArray output = new JArray();
@@ -332,6 +332,10 @@ namespace RMDF_REST_API.Model
             using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
             { text = streamReader.ReadToEnd(); }
             JObject Auth_config = JObject.Parse(text);
+
+            var fileStream1 = new FileStream(@"C:\Users\Sumit Patel\source\repos\ERP\ConfigPortal\OutputFiles\ConnectionString.json", FileMode.Open, FileAccess.Read);
+            using (var streamReader = new StreamReader(fileStream1, Encoding.UTF8))
+            { constr = streamReader.ReadToEnd(); }
 
             JObject user_role = new JObject();
 
@@ -424,7 +428,7 @@ namespace RMDF_REST_API.Model
 
                                         Console.WriteLine(query);
 
-                                        string constr = "server=localhost;port=3306;uid=root;pwd=;database=testcase;charset=utf8;SslMode=none;";
+                                       // string constr = "server=localhost;port=3306;uid=root;pwd=;database=testcase;charset=utf8;SslMode=none;";
                                         MySqlConnection con = new MySqlConnection(constr);
 
 
@@ -498,7 +502,7 @@ namespace RMDF_REST_API.Model
 
                                         Console.WriteLine(query);
 
-                                        string constr = "server=localhost;port=3306;uid=root;pwd=;database=testcase;charset=utf8;SslMode=none;";
+                                      //  string constr = "server=localhost;port=3306;uid=root;pwd=;database=testcase;charset=utf8;SslMode=none;";
                                         MySqlConnection con = new MySqlConnection(constr);
 
                                         DataTable dt = new DataTable();                                                                     //for read
@@ -599,7 +603,7 @@ namespace RMDF_REST_API.Model
 
                                         Console.WriteLine(query);
 
-                                        string constr = "server=localhost;port=3306;uid=root;pwd=;database=testcase;charset=utf8;SslMode=none;";
+                                      //  string constr = "server=localhost;port=3306;uid=root;pwd=;database=testcase;charset=utf8;SslMode=none;";
                                         MySqlConnection con = new MySqlConnection(constr);
 
 
@@ -673,7 +677,7 @@ namespace RMDF_REST_API.Model
 
                                         Console.WriteLine(query);
 
-                                        string constr = "server=localhost;port=3306;uid=root;pwd=;database=testcase;charset=utf8;SslMode=none;";
+                                       // string constr = "server=localhost;port=3306;uid=root;pwd=;database=testcase;charset=utf8;SslMode=none;";
                                         MySqlConnection con = new MySqlConnection(constr);
 
 
