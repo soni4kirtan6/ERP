@@ -3,54 +3,62 @@
 @{
     ViewData["Title"] = "AuthenticationPage";
 }
-
+<link rel="stylesheet" type="text/css" href="bootstrap.css">
 <style>
     legend.scheduler-border {
         width: inherit; /* Or auto */
         padding: 0 10px; /* To give a bit of padding on the left and right */
         border-bottom: none;
     }
-</style>
+    
 
-<h1>AuthenticationPage</h1>
+   </style>
+
+<body class="bg-dark">
+
+</body>
+<h1 class=" text-center  text-white alert-warning text-justify  container text-secondary">Authentication Page</h1>
 <form method="post">
-    <div id="rolemaster0" class="border border-dark" style="padding:10px;margin:10px;">
-        <h4>Role id</h4>
-        <input id="role_id" name="role_id" class="input-sm input--style-5 col-sm-3" type="text" />
+    <div id="rolemaster0" class="border border-dark " style="padding:10px;margin:10px;border-radius:17px;">
         <br>
-        <h4>Role Name</h4>
-        <input id="role_name" name="role_name" class="input--style-5 col-sm-3" type="text" />
+        <div class="text-center text-success">
+            <h4>Role Id  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: <input id="role_id" name="role_id" class="input-sm input--style-5  " type="text" maxlength="30" style="border-radius:7px;" /></h4>
+
+            <br>
+            <h4>Role Name&nbsp:&nbsp<input id="role_name" name="role_name" class="input--style-5" type="text" maxlength="30" style="border-radius:7px;"/></h4>
+        </div>
         <br>
         <br>
 
 
         @foreach (var table in Model.dbstructure.Properties())
         {
-            <div class="border border-dark" style="padding:10px;margin:10px;">
+            <div class="border border text-success" style="padding:10px;margin:10px;border-radius:17px; background: #363738;">
                 @{string TableName = table.Name.ToString();}
 
-                <h4>Table Name : @TableName</h4>
+                <h4 class="text-info">Table Name : @TableName</h4>
 
                 <br />
 
 
-                <h4>Column Operation</h4>
-                <div class="border border-dark ">
+                <h4 class="text-white">Column Operation</h4>
+                <div class="border border-light text-white-50"style="border:solid 10px; border-radius:7px;border-color:white; ">
                     <label class="col-md-1"><input type="checkbox" id="c-@TableName" onclick="enable_toggle('@TableName.ToString()')" name="c-@TableName" value="c">Create</label>
                     <label class="col-md-1"><input type="checkbox" id="r-@TableName" onclick="enable_toggle('@TableName.ToString()')" name="r-@TableName" value="r">Read</label>
                     <label class="col-md-1"><input type="checkbox" id="u-@TableName" onclick="enable_toggle('@TableName.ToString()')" name="u-@TableName" value="u">Update</label>
                     <label class="col-md-1"><input type="checkbox" id="d-@TableName" onclick="enable_toggle('@TableName.ToString()')" name="d-@TableName" value="d">Delete</label>
                 </div>
 
-                <div id="read-@TableName" style="display:none;" class="border border-dark col-md-3">
-                    <h4>Read</h4>
+                <div id="read-@TableName" style="display:none;" class=" col-md-5">
+                    <h4 class="text-success">Read</h4>
 
-                    Select <a href="javascript:selectToggle(true, 'read-@TableName');">All</a> | <a href="javascript:selectToggle(false, 'read-@TableName');">None</a>
+                    <a href="javascript:selectToggle(true, 'read-@TableName');" class="text-white">Select All</a> <span class="text-white-50">|</span> <a href="javascript:selectToggle(false, 'read-@TableName');"><span class="text-white">None</span></a>
+                    <br />
                     @foreach (var col in table.Value)
                     {
                         string ColName = col.ToString();
                         <p>
-                            <input type="checkbox" name="readvalues-@TableName" id="read-@TableName-@ColName" value="@ColName">@ColName
+                            <input type="checkbox" name="readvalues-@TableName" id="read-@TableName-@ColName" value="@ColName" class="text-white"><span class="text-white-50"> @ColName</span>
                         </p>
                     }
 
@@ -61,27 +69,31 @@
 
                 <div id="write-@TableName" style="display:none;" class="border border-dark col-md-3">
                     <h4>Write</h4>
-                    Select <a href="javascript:selectToggle(true, 'write-@TableName');">All</a> | <a href="javascript:selectToggle(false, 'write-@TableName');">None</a>
+                    <a href="javascript:selectToggle(true, 'write-@TableName');"class="text-white">Select All</a><span class="text-white-50">|</span> <a href="javascript:selectToggle(false, 'write-@TableName');"><span class="text-white">None</span></a>
+                <br />
                     @foreach (var col in table.Value)
-                    {
-                        string ColName = col.ToString();
-                        <p>
-                            <input type="checkbox" name="writevalues-@TableName" id="write-@TableName-@ColName" value="@ColName">@ColName
-                        </p>
-                    }
+    {
+        string ColName = col.ToString();
+        <p>
+            <input type="checkbox" name="writevalues-@TableName" id="write-@TableName-@ColName" value="@ColName"><span class="text-white-50"> @ColName</span>
 
-                </div>
+        </p>
+    }
+
+</div>
                 <br>
 
             </div>
         }
     </div>
-    <button class="btn btn-info" id="saveNnext" type="submit">SAVE & ADD new Role</button>
+    <div  class="mb-4"style="text-align: center;">
+        <button class="btn btn-info" id="saveNnext" type="submit">SAVE & ADD new Role</button>
 
 
 
 
-    <button class="btn btn-success" id="saveNsubmit" type="submit">SAVE & SUBMIT</button>
+        <button class="btn btn-success" id="saveNsubmit" type="submit">SAVE & SUBMIT</button>
+    </div>
 </form>
 
 

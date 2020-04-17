@@ -4,48 +4,62 @@
     ViewData["Title"] = "ValidationPage";
 }
 
-<div class="name" style="font-size:23px; color:#736AFF; font-weight:bold; text-align:center;">2) Add Validation to each Field</div>
-<form method="POST" name="tableMappingForm">
+<div class="name text-center  text-white alert-warning text-justify  container text-secondary" ><h1>2) Add Validation to each Field</h1></div>
+<br/>S
+<form method="POST" name="tableMappingForm" class="text-center mt-1   container border mb-3" style="border-radius:17px">
     @foreach (var table in Model.dbstructure.Properties())
     {
         string tableName = table.Name.ToString();
-        <h2>Table : @table.Name</h2>
-        <table class="table">
+        <h1 class="text-white-50 mt-3 text-center bg-success">Table : @table.Name</h1>
+        <table class=" table table-secondary table-hover mt-3 table-borderless" style="border-radius:17px" >
             <thead>
-                <tr>
-                    <th scope="col"><h3>Column Name</h3></th>
-                    <th scope="col">Validation Configurations</th>
+                <tr class="text-success">
+                    <th scope="col"><h3>Table Name</h3></th>
+                    <th scope="col"><h3>Alternate name </h3></th>
                 </tr>
             </thead>
             @foreach (var col in table.Value)
             {
                 //int i = 0;
 
-                string colName=col.ToString();
+                string colName = col.ToString();
                 <tbody>
                     <tr>
-                        <th scope="row">@colName</th>
+                        <th scope="row" class="text-black-50"><h4>@colName</h4></th>
                         <td>
                             <div>
-                                
-                                <div class="validation" id="@tableName-@colName-0">
-                                    <h4 class="val-no" id="val_no-@tableName-@colName-0" name="val_no-@tableName-@colName-0">Validation 1:</h4><br />
 
-                                    <label>Type of Validation:</label>
+                                <div class="validation text-left" id="@tableName-@colName-0">
+                                    <h4 class="val-no text-black-50" id="val_no-@tableName-@colName-0" name="val_no-@tableName-@colName-0">Validation 1:</h4><br />
 
-                                    <select class="form-control type-sel" id="type_sel-@tableName-@colName-0" name="type_sel-@tableName-@colName-0" >
+                                    <h5 class="text-body"><label> Type of Validation: </label></h5>
+
+                                    <select class="form-control type-sel" id="type_sel-@tableName-@colName-0" name="type_sel-@tableName-@colName-0">
                                         <option>CanBeEmpty</option>
+                                        @*true false*@
                                         <option>Maxlength</option>
+                                        @*numeric*@
                                         <option>MinLength</option>
+                                        @*Nymeric*@
                                         <option>RegEx</option>
+                                        @*Drop down, and if customRegEx selected than text*@
                                         <option>Static List</option>
+                                        @*Multiple entries seperated by ; or some delimeter*@
                                     </select>
                                     <br />
-                                    <label>Value :</label>
-                                    <input class="input--style-5 valu-" placeholder="Enter Value" type="text" id="value-@tableName-@colName-0" name="value-@tableName-@colName-0"><br />
-                                    <label>ErrorOrWarning :</label>
-                                    <input class="input--style-5 e-w" placeholder="e/w" type="text" id="E_W-@tableName-@colName-0" name="E_W-@tableName-@colName-0"><br />
-                                    <br />
+                                    <h5 class="text-body">
+                                        <label>Value :</label>
+                                    </h5>
+                                    <input class="form-control valu-" placeholder="Enter Value" type="text" id="value-@tableName-@colName-0" name="value-@tableName-@colName-0"><br />
+                                    <h5 class="text-body">
+                                        <label>Error Or Warning :</label>
+                                     </h5>
+                                        @*<input class="form-control e-w" placeholder="e/w" type="radio" id="E_W-@tableName-@colName-0" name="E_W-@tableName-@colName-0"><br />*@
+
+                                        <label class="radio-inline"><input type="radio" id="E_W-@tableName-@colName-0" name="E_W-@tableName-@colName-0" value="e" checked>Error</label>
+                                        &nbsp&nbsp&nbsp
+                                        <label class="radio-inline"><input type="radio" id="E_W-@tableName-@colName-0" name="E_W-@tableName-@colName-0" value="w">Warning</label>
+                                        <br />
                                 </div>
                             </div>
                             <input type="hidden" class="hidden-count" id="count-@tableName-@colName" name="count-@tableName-@colName">
@@ -55,9 +69,10 @@
                 </tbody>
             }
         </table>
+        <br/>
     }
     <div>
-        <button class="btn btn--radius-2 btn--red m-t-30" type="submit" asp-page="#">Save & Next</button>
+        <button class="btn btn-outline-success mb-3" type="submit" asp-page="#">Save & Next</button>
         @*<label class="label--desc" style="margin-top:10px; margin-left:25px" asp-for="ConStr">@Model.ConStr</label>*@
     </div>
 </form>
@@ -101,11 +116,8 @@
 
         colCount[col] = colCount[col] + 1;
 
-        clone.id = col + "-" +colCount[col]; // there can only be one element with an ID
-        valNo.innerText = "Validation " + (colCount[col] + 1)+":";
-        typeSel.id = "type_sel-" + col + "-" + colCount[col];
-        value.id = "value-" + col + "-" +colCount[col];
-        e_w.id = "E_W-" + col + "-" + colCount[col];
+
+
 
         typeSel.setAttribute("name",(typeSel.id));
         value.setAttribute("name",(value.id));
