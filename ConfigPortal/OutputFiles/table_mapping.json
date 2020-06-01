@@ -1,4 +1,8 @@
 {
-  "zas": "email_info",
-  "sas": "person_info"
+  "ContactINfo": "contact_info",
+  "CourseData": "course_data",
+  "li": "library_info",
+  "si": "student_info",
+  "sli": "student_login_info",
+  "sw": "student_workshop"
 }

@@ -25,7 +25,10 @@
             <h4>Role Id  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: <input id="role_id" name="role_id" class="input-sm input--style-5  " type="text" maxlength="30" style="border-radius:7px;" /></h4>
 
             <br>
-            <h4>Role Name&nbsp:&nbsp<input id="role_name" name="role_name" class="input--style-5" type="text" maxlength="30" style="border-radius:7px;"/></h4>
+            <h4>Role Name&nbsp:&nbsp<input id="role_name" name="role_name" class="input--style-5" type="text" maxlength="30" style="border-radius:7px;" /></h4>
+            <div class="alert alert-danger" role="alert" style="display:@Model.error_display">
+                Role with same name already Exists, Please chose an unique name.
+            </div>
         </div>
         <br>
         <br>

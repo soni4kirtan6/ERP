@@ -1,15 +1,39 @@
 {
   "student": {
-    "email_info": {
-      "CRUD": "CRUD",
-      "!ReadColumns": [],
-      "!WriteColumns": []
+    "contact_info": {
+      "CRUD": "CRU-",
+      "!ReadColumns": [
+        "Enrollment_No",
+        "Email_Id",
+        "Message"
+      ],
+      "!WriteColumns": [
+        "Enrollment_No",
+        "Email_Id",
+        "Message"
+      ]
     },
-    "person_info": {
-      "CRUD": "CRUD",
-      "!ReadColumns": [],
-      "!WriteColumns": []
+    "course_data": {
+      "CRUD": "C---",
+      "!WriteColumns": [
+        "Enrollment_No",
+        "Course_Name",
+        "Beanch_Name",
+        "Subject_Name",
+        "Topic_Name",
+        "Password"
+      ]
+    },
+    "library_info": {
+      "CRUD": "-R--",
+      "!ReadColumns": [
+        "Enrollment_No",
+        "Course_Name",
+        "Branch_Name",
+        "Subject_Name",
+        "Topic_Name",
+        "Password"
+      ]
     }
-  },
-  "": {}
+  }
 }
