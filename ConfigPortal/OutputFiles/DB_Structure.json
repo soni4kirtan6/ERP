@@ -1,47 +1,19 @@
 {
-  "contact_info": [
-    "Enrollment_No",
-    "Email_Id",
-    "Message"
+  "email_info": [
+    "email_id",
+    "email_address",
+    "first_name"
   ],
-  "course_data": [
-    "Enrollment_No",
-    "Course_Name",
-    "Beanch_Name",
-    "Subject_Name",
-    "Topic_Name",
-    "Password"
+  "person_info": [
+    "person_id",
+    "first_name",
+    "last_name"
   ],
-  "library_info": [
-    "Enrollment_No",
-    "Course_Name",
-    "Branch_Name",
-    "Subject_Name",
-    "Topic_Name",
-    "Password"
-  ],
-  "student_info": [
-    "Student_id",
-    "First_Name",
-    "Last_Name",
-    "Course_Name",
-    "Branch_Name",
-    "Current_Year",
-    "Email_Id",
-    "Mobile_No",
-    "Country",
-    "Password",
-    "Confirm_Password"
-  ],
-  "student_login_info": [
-    "Enrollment_No",
-    "Email_Id",
-    "Password"
-  ],
-  "student_workshop": [
-    "Enrollment_No",
-    "Course_Name",
-    "Branch_Name",
-    "Password"
+  "users": [
+    "u_id",
+    "user_id",
+    "password",
+    "role",
+    "name"
   ]
 }

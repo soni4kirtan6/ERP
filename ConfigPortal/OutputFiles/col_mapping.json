@@ -1,47 +1,19 @@
 {
-  "ContactINfo": {
-    "1": "Enrollment_No",
-    "2": "Email_Id",
-    "3": "Message"
+  "emailinfo": {
+    "emailid": "email_id",
+    "emailaddress": "email_address",
+    "firstname": "first_name"
   },
-  "CourseData": {
-    "4": "Enrollment_No",
-    "5": "Course_Name",
-    "6": "Beanch_Name",
-    "7": "Subject_Name",
-    "8": "Topic_Name",
-    "9": "Password"
+  "personinfo": {
+    "personid": "person_id",
+    "firstname": "first_name",
+    "lastname": "last_name"
   },
-  "li": {
-    "10": "Enrollment_No",
-    "11": "Course_Name",
-    "12": "Branch_Name",
-    "q": "Subject_Name",
-    "w": "Topic_Name",
-    "e": "Password"
-  },
-  "si": {
-    "r": "Student_id",
-    "t": "First_Name",
-    "y": "Last_Name",
-    "u": "Course_Name",
-    "uf": "Branch_Name",
-    "i": "Current_Year",
-    "p": "Email_Id",
-    "l": "Mobile_No",
-    "k": "Country",
-    "h": "Password",
-    "v": "Confirm_Password"
-  },
-  "sli": {
-    "i": "Enrollment_No",
-    "j": "Email_Id",
-    "h": "Password"
-  },
-  "sw": {
-    "gjh": "Enrollment_No",
-    "ferg": "Course_Name",
-    "vdsrg": "Branch_Name",
-    "cd": "Password"
+  "users": {
+    "uid": "u_id",
+    "_userid": "user_id",
+    "password": "password",
+    "role": "role",
+    "name": "name"
   }
 }

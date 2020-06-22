@@ -1,0 +1,19 @@
+{
+  "emailinfo": [
+    "emailid",
+    "emailaddress",
+    "firstname"
+  ],
+  "personinfo": [
+    "personid",
+    "firstname",
+    "lastname"
+  ],
+  "users": [
+    "uid",
+    "userid",
+    "password",
+    "role",
+    "name"
+  ]
+}

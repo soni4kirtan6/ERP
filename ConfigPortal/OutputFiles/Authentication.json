@@ -1,38 +1,60 @@
 {
+  "developer": {
+    "email_info": {
+      "CRUD": "CRUD",
+      "!ReadColumns": [],
+      "!WriteColumns": []
+    },
+    "person_info": {
+      "CRUD": "CRUD",
+      "!ReadColumns": [],
+      "!WriteColumns": []
+    },
+    "users": {
+      "CRUD": "CRUD",
+      "!ReadColumns": [],
+      "!WriteColumns": []
+    }
+  },
   "student": {
-    "contact_info": {
-      "CRUD": "CRU-",
-      "!ReadColumns": [
-        "Enrollment_No",
-        "Email_Id",
-        "Message"
-      ],
+    "email_info": {
+      "CRUD": "-RUD",
+      "!ReadColumns": [],
       "!WriteColumns": [
-        "Enrollment_No",
-        "Email_Id",
-        "Message"
       ]
     },
-    "course_data": {
-      "CRUD": "C---",
+    "person_info": {
+      "CRUD": "-RU-",
+      "!ReadColumns": [],
       "!WriteColumns": [
-        "Enrollment_No",
-        "Course_Name",
-        "Beanch_Name",
-        "Subject_Name",
-        "Topic_Name",
-        "Password"
       ]
     },
-    "library_info": {
-      "CRUD": "-R--",
-      "!ReadColumns": [
-        "Enrollment_No",
-        "Course_Name",
-        "Branch_Name",
-        "Subject_Name",
-        "Topic_Name",
-        "Password"
+    "users": {
+      "CRUD": "-RU-",
+      "!ReadColumns": [],
+      "!WriteColumns": [
+        "role"
+      ]
+    }
+  },
+  "teacher": {
+    "email_info": {
+      "CRUD": "CRUD",
+      "!ReadColumns": [],
+      "!WriteColumns": [
+      ]
+    },
+    "person_info": {
+      "CRUD": "CRUD",
+      "!ReadColumns": [],
+      "!WriteColumns": [
+      ]
+    },
+    "users": {
+      "CRUD": "CRUD",
+      "!ReadColumns": [],
+      "!WriteColumns": [
+        "role"
       ]
     }
   }

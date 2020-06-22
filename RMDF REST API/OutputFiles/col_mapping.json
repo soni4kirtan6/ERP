@@ -1,0 +1,98 @@
+{
+  "add": {
+    "q": "_id",
+    "w": "address_line1",
+    "e": "address_line2",
+    "r": "city_village_id",
+    "t": "state_id",
+    "y": "country_id",
+    "u": "postal_code"
+  },
+  "cvl": {
+    "i": "_id",
+    "o": "type",
+    "p": "state_id",
+    "l": "name"
+  },
+  "cl": {
+    "k": "_id",
+    "j": "country_code",
+    "h": "name"
+  },
+  "ei": {
+    "g": "_id",
+    "f": "degree",
+    "d": "degree_subject",
+    "s": "passing_year",
+    "a": "passing_grade"
+  },
+  "eei": {
+    "z": "email_id",
+    "x": "email_type",
+    "c": "email"
+  },
+  "ll": {
+    "v": "_id",
+    "b": "lang_code",
+    "n": "lang_name"
+  },
+  "l": {
+    "m": "_id",
+    "0": "type",
+    "1": "subtype",
+    "2": "value_code",
+    "3": "lang_code",
+    "4": "value_text"
+  },
+  "pd": {
+    "5": "_id",
+    "6": "person_id",
+    "7": "address_type",
+    "8": "address_id",
+    "9": "start_date",
+    "10": "end_date",
+    "11": "optout"
+  },
+  "pf": {
+    "12": "_id",
+    "13": "person_id",
+    "14": "flag_code",
+    "15": "start_date",
+    "16": "end_date"
+  },
+  "pi": {
+    "17": "person_id",
+    "18": "first_name",
+    "19": "middle_name",
+    "20": "last_name",
+    "21": "gender"
+  },
+  "ppi": {
+    "22": "_id",
+    "23": "phone_type",
+    "24": "phone",
+    "25": "optout"
+  },
+  "ri": {
+    "26": "_id",
+    "27": "person1_id",
+    "28": "person2_id",
+    "29": "relation1to2",
+    "30": "relation2to1",
+    "31": "relation_start_date",
+    "32": "relation_end_date"
+  },
+  "rl": {
+    "33": "_id",
+    "34": "role_id",
+    "35": "type",
+    "36": "subtype",
+    "37": "value_code"
+  },
+  "sl": {
+    "38": "_id",
+    "39": "country_id",
+    "40": "state_code",
+    "41": "name"
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "Principal": {
+    "addresses": {
+      "CRUD": "-R--",
+      "!ReadColumns": []
+    },
+    "city_village_list": {
+      "CRUD": "CR--",
+      "!ReadColumns": [],
+      "!WriteColumns": [
+        "_id",
+        "type",
+        "state_id",
+        "name"
+      ]
+    },
+    "country_list": {
+      "CRUD": "--U-",
+      "!WriteColumns": [
+        "country_code",
+        "name"
+      ]
+    },
+    "education_info": {
+      "CRUD": "-R--",
+      "!ReadColumns": [
+        "_id",
+        "degree_subject",
+        "passing_year",
+        "passing_grade"
+      ]
+    },
+    "email_info": {
+      "CRUD": "C---",
+      "!WriteColumns": []
+    },
+    "language_list": {
+      "CRUD": "-R--",
+      "!ReadColumns": [
+        "_id",
+        "lang_code",
+        "lang_name"
+      ]
+    },
+    "lists": {
+      "CRUD": "--U-",
+      "!WriteColumns": []
+    },
+    "person_addresses": {
+      "CRUD": "C---",
+      "!WriteColumns": [
+        "_id",
+        "person_id",
+        "address_id",
+        "start_date",
+        "end_date",
+        "optout"
+      ]
+    },
+    "person_flags": {
+      "CRUD": "-RU-",
+      "!ReadColumns": [],
+      "!WriteColumns": [
+        "_id",
+        "flag_code",
+        "start_date",
+        "end_date"
+      ]
+    },
+    "person_info": {
+      "CRUD": "C---",
+      "!WriteColumns": [
+        "person_id",
+        "first_name",
+        "last_name",
+        "gender"
+      ]
+    },
+    "phone_info": {
+      "CRUD": "C---",
+      "!WriteColumns": [
+        "_id",
+        "phone",
+        "optout"
+      ]
+    },
+    "relations_info": {
+      "CRUD": "-R--",
+      "!ReadColumns": [
+        "_id",
+        "person1_id",
+        "relation1to2",
+        "relation2to1",
+        "relation_start_date",
+        "relation_end_date"
+      ]
+    },
+    "role_lists": {
+      "CRUD": "--U-",
+      "!WriteColumns": [
+        "_id",
+        "role_id",
+        "subtype",
+        "value_code"
+      ]
+    },
+    "state_list": {
+      "CRUD": "C---",
+      "!WriteColumns": [
+        "_id",
+        "state_code",
+        "name"
+      ]
+    }
+  },
+  "xyz": {}
+}

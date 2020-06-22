@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore;
+﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
+using System.Net;
 
 namespace RMDF_REST_API
 {
@@ -19,6 +13,8 @@ namespace RMDF_REST_API
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+            .UseUrls("http://" + Dns.GetHostEntry(Dns.GetHostName()).AddressList[1].ToString() + ":5001")
+            .UseStartup<Startup>();
+
     }
 }

@@ -1,0 +1,601 @@
+{
+  "addresses": {
+    "_id": [
+      {
+        "typeKey": "Static List",
+        "keyValue": [
+          "a",
+          "b"
+        ],
+        "errorOrWarning": "e",
+        "MsgTextNo": "1001"
+      },
+      {
+        "typeKey": "Maxlength",
+        "keyValue": "30",
+        "errorOrWarning": "w",
+        "MsgTextNo": "1002"
+      },
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "w",
+        "MsgTextNo": "1003"
+      },
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "w",
+        "MsgTextNo": "1004"
+      }
+    ],
+    "address_line1": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1005"
+      }
+    ],
+    "address_line2": [
+      {
+        "typeKey": "RegEx",
+        "keyValue": "personName",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1006"
+      },
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "personName",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1007"
+      }
+    ],
+    "city_village_id": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1008"
+      }
+    ],
+    "state_id": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1009"
+      }
+    ],
+    "country_id": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1010"
+      }
+    ],
+    "postal_code": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1011"
+      }
+    ]
+  },
+  "city_village_list": {
+    "_id": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1012"
+      }
+    ],
+    "type": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1013"
+      }
+    ],
+    "state_id": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1014"
+      }
+    ],
+    "name": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1015"
+      }
+    ]
+  },
+  "country_list": {
+    "_id": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1016"
+      }
+    ],
+    "country_code": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1017"
+      }
+    ],
+    "name": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1018"
+      }
+    ]
+  },
+  "education_info": {
+    "_id": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1019"
+      }
+    ],
+    "degree": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1020"
+      }
+    ],
+    "degree_subject": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1021"
+      }
+    ],
+    "passing_year": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1022"
+      }
+    ],
+    "passing_grade": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1023"
+      }
+    ]
+  },
+  "email_info": {
+    "email_id": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1024"
+      }
+    ],
+    "email_type": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1025"
+      }
+    ],
+    "email": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1026"
+      }
+    ]
+  },
+  "language_list": {
+    "_id": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1027"
+      }
+    ],
+    "lang_code": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1028"
+      }
+    ],
+    "lang_name": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1029"
+      }
+    ]
+  },
+  "lists": {
+    "_id": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1030"
+      }
+    ],
+    "type": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1031"
+      }
+    ],
+    "subtype": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1032"
+      }
+    ],
+    "value_code": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1033"
+      }
+    ],
+    "lang_code": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1034"
+      }
+    ],
+    "value_text": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1035"
+      }
+    ]
+  },
+  "person_addresses": {
+    "_id": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1036"
+      }
+    ],
+    "person_id": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1037"
+      }
+    ],
+    "address_type": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1038"
+      }
+    ],
+    "address_id": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1039"
+      }
+    ],
+    "start_date": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1040"
+      }
+    ],
+    "end_date": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1041"
+      }
+    ],
+    "optout": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1042"
+      }
+    ]
+  },
+  "person_flags": {
+    "_id": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1043"
+      }
+    ],
+    "person_id": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1044"
+      }
+    ],
+    "flag_code": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1045"
+      }
+    ],
+    "start_date": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1046"
+      }
+    ],
+    "end_date": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1047"
+      }
+    ]
+  },
+  "person_info": {
+    "person_id": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1048"
+      }
+    ],
+    "first_name": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1049"
+      }
+    ],
+    "middle_name": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1050"
+      }
+    ],
+    "last_name": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1051"
+      }
+    ],
+    "gender": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1052"
+      }
+    ]
+  },
+  "phone_info": {
+    "_id": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1053"
+      }
+    ],
+    "phone_type": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1054"
+      }
+    ],
+    "phone": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1055"
+      }
+    ],
+    "optout": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1056"
+      }
+    ]
+  },
+  "relations_info": {
+    "_id": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1057"
+      }
+    ],
+    "person1_id": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1058"
+      }
+    ],
+    "person2_id": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1059"
+      }
+    ],
+    "relation1to2": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1060"
+      }
+    ],
+    "relation2to1": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1061"
+      }
+    ],
+    "relation_start_date": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1062"
+      }
+    ],
+    "relation_end_date": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1063"
+      }
+    ]
+  },
+  "role_lists": {
+    "_id": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1064"
+      }
+    ],
+    "role_id": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1065"
+      }
+    ],
+    "type": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1066"
+      }
+    ],
+    "subtype": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1067"
+      }
+    ],
+    "value_code": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1068"
+      }
+    ]
+  },
+  "state_list": {
+    "_id": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1069"
+      }
+    ],
+    "country_id": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1070"
+      }
+    ],
+    "state_code": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1071"
+      }
+    ],
+    "name": [
+      {
+        "typeKey": "CanBeEmpty",
+        "keyValue": "false",
+        "errorOrWarning": "e",
+        "MsgTextNo": "1072"
+      }
+    ]
+  }
+}

@@ -7,10 +7,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="..\ConfigPortal\OutputFiles\Authentication.json" Link="JsonFiles\Authentication.json" />
+    <Content Include="..\ConfigPortal\OutputFiles\col_mapping.json" Link="JsonFiles\col_mapping.json" />
+    <Content Include="..\ConfigPortal\OutputFiles\ConnectionString.json" Link="JsonFiles\ConnectionString.json" />
+    <Content Include="..\ConfigPortal\OutputFiles\ConnectionString.txt" Link="JsonFiles\ConnectionString.txt" />
+    <Content Include="..\ConfigPortal\OutputFiles\DB_Structure.json" Link="JsonFiles\DB_Structure.json" />
+    <Content Include="..\ConfigPortal\OutputFiles\table_mapping.json" Link="JsonFiles\table_mapping.json" />
+    <Content Include="..\ConfigPortal\OutputFiles\validationConfig.json" Link="JsonFiles\validationConfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="MySql.Data" Version="8.0.19" />
     <PackageReference Include="System.Management" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="JsonFiles\" />
   </ItemGroup>
 
 </Project>

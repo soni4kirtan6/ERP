@@ -1,0 +1,16 @@
+{
+  "add": "addresses",
+  "cvl": "city_village_list",
+  "cl": "country_list",
+  "ei": "education_info",
+  "eei": "email_info",
+  "ll": "language_list",
+  "l": "lists",
+  "pd": "person_addresses",
+  "pf": "person_flags",
+  "pi": "person_info",
+  "ppi": "phone_info",
+  "ri": "relations_info",
+  "rl": "role_lists",
+  "sl": "state_list"
+}

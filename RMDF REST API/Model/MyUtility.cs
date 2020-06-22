@@ -57,7 +57,7 @@ namespace RMDF_REST_API.Model
 
                 string text;
 
-                var fileStream = new FileStream(@"C:\Users\Sumit Patel\source\repos\ERP\ConfigPortal\OutputFiles\table_mapping.json", FileMode.Open, FileAccess.Read);
+                var fileStream = new FileStream(@"C:\Users\user\Source\Repos\soni4kirtan6\ERP\ConfigPortal\OutputFiles\table_mapping.json", FileMode.Open, FileAccess.Read);
                 using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
                 {
                     text = streamReader.ReadToEnd();
@@ -65,7 +65,7 @@ namespace RMDF_REST_API.Model
                 JObject db_table_mapping = JObject.Parse(text);
 
                 string text1;
-                var fileStream1 = new FileStream(@"C:\Users\Sumit Patel\source\repos\ERP\ConfigPortal\OutputFiles\col_mapping.json", FileMode.Open, FileAccess.Read);
+                var fileStream1 = new FileStream(@"C:\Users\user\Source\Repos\soni4kirtan6\ERP\ConfigPortal\OutputFiles\col_mapping.json", FileMode.Open, FileAccess.Read);
                 using (var streamReader1 = new StreamReader(fileStream1, Encoding.UTF8))
                 {
                     text1 = streamReader1.ReadToEnd();
@@ -130,8 +130,8 @@ namespace RMDF_REST_API.Model
             
             JObject j_out = new JObject();
             string text;
-
-            var fileStream = new FileStream(@"C:\Users\Sumit Patel\source\repos\ERP\ConfigPortal\OutputFiles\validationConfig.json", FileMode.Open, FileAccess.Read);
+            
+            var fileStream = new FileStream(@"C:\Users\user\Source\Repos\soni4kirtan6\ERP\ConfigPortal\OutputFiles\validationConfig.json", FileMode.Open, FileAccess.Read);
             using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
             { text = streamReader.ReadToEnd(); }
             JObject val_config = JObject.Parse(text);
@@ -170,7 +170,7 @@ namespace RMDF_REST_API.Model
                                 string val_name = validation["typeKey"].ToString();
                                 switch (val_name)
                                 {
-                                    case "canBeEmpty":
+                                    case "CanBeEmpty":
                                         bool null_cond = col.Value != null && col.Value.ToString() != "";
                                         bool cond_2 = validation["keyValue"].ToString().Equals("true");
                                         if (cond_2 || null_cond)
@@ -226,7 +226,7 @@ namespace RMDF_REST_API.Model
 
 
                                         string text1;
-                                        var fileStream1 = new FileStream(@"JsonFiles\defaultRegEx.json", FileMode.Open, FileAccess.Read);
+                                        var fileStream1 = new FileStream(@"C:\Users\user\Source\Repos\soni4kirtan6\ERP\RMDF REST API\JsonFiles\defaultRegEx.json", FileMode.Open, FileAccess.Read);
                                         using (var streamReader1 = new StreamReader(fileStream1, Encoding.UTF8))
                                         { text1 = streamReader1.ReadToEnd(); }
                                         JObject default_reg_ex = JObject.Parse(text1);
@@ -328,12 +328,12 @@ namespace RMDF_REST_API.Model
             JArray output = new JArray();
 
 
-            var fileStream = new FileStream(@"C:\Users\Sumit Patel\source\repos\ERP\ConfigPortal\OutputFiles\Authentication.json", FileMode.Open, FileAccess.Read);
+            var fileStream = new FileStream(@"C:\Users\user\Source\Repos\soni4kirtan6\ERP\ConfigPortal\OutputFiles\Authentication.json", FileMode.Open, FileAccess.Read);
             using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
             { text = streamReader.ReadToEnd(); }
             JObject Auth_config = JObject.Parse(text);
 
-            var fileStream1 = new FileStream(@"C:\Users\Sumit Patel\source\repos\ERP\ConfigPortal\OutputFiles\ConnectionString.json", FileMode.Open, FileAccess.Read);
+            var fileStream1 = new FileStream(@"C:\Users\user\Source\Repos\soni4kirtan6\ERP\ConfigPortal\OutputFiles\ConnectionString.json", FileMode.Open, FileAccess.Read);
             using (var streamReader = new StreamReader(fileStream1, Encoding.UTF8))
             { constr = streamReader.ReadToEnd(); }
 
@@ -461,6 +461,7 @@ namespace RMDF_REST_API.Model
                         else
                         {
                             Console.WriteLine("permission is not allowed");
+                            jout.Add("Create", "permission is not allowed");
                         }
                         break;
 
@@ -489,7 +490,6 @@ namespace RMDF_REST_API.Model
                                 }
                                 if (temp == 0)
                                 {
-
                                     try
                                     {
                                         string query = "select ";
@@ -498,11 +498,11 @@ namespace RMDF_REST_API.Model
                                         {
                                             query = query + col_names[i] + ",";
                                         }
-                                        query = query + col_names[i] + " from " + table.Key.ToString() + " where " + col_names[0] + "="+col_values[0];
+                                        query = query + col_names[i] + " from " + table.Key.ToString() + " where " + col_names[0] + "='" + col_values[0]+"'";
 
                                         Console.WriteLine(query);
 
-                                      //  string constr = "server=localhost;port=3306;uid=root;pwd=;database=testcase;charset=utf8;SslMode=none;";
+                                        //  string constr = "server=localhost;port=3306;uid=root;pwd=;database=testcase;charset=utf8;SslMode=none;";
                                         MySqlConnection con = new MySqlConnection(constr);
 
                                         DataTable dt = new DataTable();                                                                     //for read
@@ -510,7 +510,7 @@ namespace RMDF_REST_API.Model
                                         adapt = new MySqlDataAdapter(query, con);
                                         adapt.Fill(dt);
 
-                                       // JObject jout = new JObject();
+                                        // JObject jout = new JObject();
                                         JArray columns_ = new JArray();
                                         JArray rows = new JArray();
                                         string ColumnName;
@@ -537,18 +537,17 @@ namespace RMDF_REST_API.Model
                                         each_jobject.Add("Rows", rows);
                                         //   Console.WriteLine(jout);
 
-                                     //   output.Add(jout);
+                                        //   output.Add(jout);
 
 
-                                     //   Console.WriteLine("success");
-                                     //   con.Close();
+                                        //   Console.WriteLine("success");
+                                        //   con.Close();
 
                                     }
                                     catch (MySql.Data.MySqlClient.MySqlException ex)
                                     {
                                         Console.WriteLine("Error :" + ex.Message.ToString());
                                     }
-
                                 }
                                 else
                                 {
@@ -560,6 +559,7 @@ namespace RMDF_REST_API.Model
                         else
                         {
                             Console.WriteLine("permission is not allowed");
+                            jout.Add("Read", "permission is not allowed");
                         }
                         break;
                     case "U":
@@ -637,6 +637,7 @@ namespace RMDF_REST_API.Model
                         else
                         {
                             Console.WriteLine("permission is not allowed");
+                            jout.Add("Update", "permission is not allowed");
                         }
                         break;
                     case "D":
@@ -710,6 +711,8 @@ namespace RMDF_REST_API.Model
                         else
                         {
                             Console.WriteLine("permission is not allowed");
+                            jout.Add("Delete", "permission is not allowed");
+
                         }
                         break;
                     default:
